@@ -3,7 +3,7 @@ from langchain.prompts import PromptTemplate
 import os
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path="../.env.local")
+load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 model = os.getenv("MODEL")
 temprature = os.getenv("TEMPERATURE")
