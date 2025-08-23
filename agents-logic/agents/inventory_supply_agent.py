@@ -4,18 +4,15 @@ from typing import Dict, Callable, Optional
 import json
 import random
 
-# LangChain Imports
 from langchain_groq import ChatGroq
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.tools import tool
 from langchain_core.messages import HumanMessage, ToolMessage
 
-# --- Environment and LLM Setup ---
-# Ensures the agent can run independently for testing.
 load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 
-# A capable model is needed for reasoning about tools and data.
+
 agent_llm = ChatGroq(
     model="llama3-70b-8192", temperature=0.2, groq_api_key=groq_api_key
 )
@@ -23,7 +20,7 @@ agent_llm = ChatGroq(
 # ==============================================================================
 # 1. MOCK DATABASE & TOOL DEFINITIONS
 # ==============================================================================
-# This simulates a real inventory database for our tools to interact with.
+
 mock_inventory_db = {
     "MUM-WH-01": {  # Mumbai Warehouse
         "PROD-123": 800,  # Standard Electronics Kit
@@ -78,7 +75,7 @@ def forecast_demand(item_id: str, time_period_days: int) -> str:
     print(
         f"--- TOOL CALLED: forecast_demand(item_id='{item_id}', time_period_days={time_period_days}) ---"
     )
-    # Simple mock forecast: base demand + some randomness
+ 
     base_demand = 10 if "123" in item_id else 15
     forecast = int((base_demand * time_period_days) * (random.uniform(0.8, 1.2)))
     return f"Forecasted demand for item '{item_id}' over the next {time_period_days} days is approximately {forecast} units."
@@ -162,7 +159,7 @@ if __name__ == "__main__":
     inventory_agent = create_inventory_supply_agent()
     available_tools = get_available_tools()
 
-    # A complex query that requires multiple tool calls in sequence
+    
     query = "We are seeing a spike in demand for 'PROD-123' at the Bangalore warehouse (BLR-WH-02). Is a shortage likely within the next 30 days? If so, schedule a restock of 500 units from the Mumbai warehouse (MUM-WH-01)."
     print(f'User Query: "{query}"')
 

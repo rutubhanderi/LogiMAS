@@ -4,13 +4,11 @@ from typing import Dict, Callable, Literal
 import json
 import random
 
-# LangChain Imports
 from langchain_groq import ChatGroq
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.tools import tool
 from langchain_core.messages import HumanMessage, ToolMessage
 
-# --- Environment and LLM Setup ---
 load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 
@@ -21,7 +19,6 @@ agent_llm = ChatGroq(
 # ==============================================================================
 # 1. TOOL DEFINITIONS
 # ==============================================================================
-# These tools simulate querying cost databases and analysis services.
 
 
 @tool
@@ -37,7 +34,7 @@ def get_transportation_costs(
     """
     print(f"--- TOOL CALLED: get_transportation_costs(...) ---")
 
-    # Mock cost calculation
+
     speed_multipliers = {"standard": 1.0, "express": 1.5, "overnight": 2.5}
     base_rate_per_kg = 0.5  # Base cost per kg for a standard distance
 
@@ -101,11 +98,10 @@ def analyze_batching_options(destination: str, total_weight_kg: float) -> str:
     """
     print(f"--- TOOL CALLED: analyze_batching_options(...) ---")
 
-    # Mock analysis: batching is more effective for smaller shipments
+    
     if total_weight_kg > 500:
         return "Batching savings are minimal for shipments over 500kg as they already achieve good freight rates."
 
-    # Simulate finding other orders to batch with
     potential_saving_percent = random.randint(15, 30)
     wait_time_hours = 24
 
@@ -167,7 +163,7 @@ if __name__ == "__main__":
     cost_agent = create_cost_optimization_agent()
     available_tools = get_available_tools()
 
-    # A query designed to make the agent use multiple tools to form a strategy
+    
     query = "I need to ship 150 items (400kg total) from Mumbai to Delhi. They will be packed in standard boxes at warehouse MUM-WH-01. Find me the most cost-effective shipping strategy."
     print(f'User Query: "{query}"')
 

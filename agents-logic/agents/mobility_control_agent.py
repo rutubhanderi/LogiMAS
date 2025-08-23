@@ -1,21 +1,13 @@
-# mobility_control_agent.py (Corrected with full execution loop)
-
 import os
 from dotenv import load_dotenv
 from typing import Dict, Callable
 
-# LangChain Imports
 from langchain_groq import ChatGroq
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.tools import tool
-
-# Make sure to import HumanMessage AND ToolMessage
 from langchain_core.messages import HumanMessage, ToolMessage
 
-# --- Step 1: Initial Sanity Check ---
 print("✅ Script Started: mobility_control_agent.py is running.")
-
-# --- Environment and LLM Setup ---
 print("... Loading environment variables from .env file...")
 load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
@@ -35,7 +27,7 @@ except Exception as e:
     exit()
 
 # ==============================================================================
-# 1. TOOL DEFINITIONS (No changes here)
+# 1. TOOL DEFINITIONS
 # ==============================================================================
 
 
@@ -76,12 +68,11 @@ def get_weather_forecast(location: str) -> str:
 
 
 # ==============================================================================
-# 2. AGENT DEFINITION (No changes here)
+# 2. AGENT DEFINITION 
 # ==============================================================================
 
 
 def create_mobility_agent():
-    # A more descriptive system prompt for better performance
     prompt = ChatPromptTemplate.from_messages(
         [
             (
@@ -108,7 +99,7 @@ def get_available_tools() -> Dict[str, Callable]:
 
 
 # ==============================================================================
-# 3. TEST EXECUTION BLOCK (THIS IS THE CORRECTED PART)
+# 3. TEST EXECUTION BLOCK 
 # ==============================================================================
 if __name__ == "__main__":
     print("\n--- Starting Test Execution Block ---")
@@ -121,7 +112,7 @@ if __name__ == "__main__":
 
     chat_history = [HumanMessage(content=query)]
 
-    # This loop continues until the agent gives a final answer instead of calling a tool.
+
     while True:
         print("\n[1. Invoking agent with current history...]")
 
@@ -134,7 +125,7 @@ if __name__ == "__main__":
 
         chat_history.append(response)
 
-        # If there are no tool calls, the agent has its final answer. We print it and exit.
+        
         if not response.tool_calls:
             print("\n[FINAL ANSWER RECEIVED]")
             print("=" * 40)
@@ -142,7 +133,6 @@ if __name__ == "__main__":
             print("=" * 40)
             break
 
-        # If we are here, the agent wants to use one or more tools.
         print(
             f"\n[2. Agent requested tool calls: {[tc['name'] for tc in response.tool_calls]}]"
         )
@@ -153,14 +143,14 @@ if __name__ == "__main__":
             tool_to_call = available_tools.get(tool_name)
 
             if tool_to_call:
-                # Execute the tool function with the arguments provided by the LLM
+                
                 tool_output = tool_to_call.invoke(tool_call["args"])
-                # Create a ToolMessage with the result to send back to the agent
+            
                 tool_messages.append(
                     ToolMessage(content=str(tool_output), tool_call_id=tool_call["id"])
                 )
 
-        # Add the tool results to the chat history
+        
         chat_history.extend(tool_messages)
         print(
             "[3. Added tool results to history. Looping back to agent for next step...]"

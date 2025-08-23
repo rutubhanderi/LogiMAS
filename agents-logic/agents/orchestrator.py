@@ -55,7 +55,7 @@ routing_chain = routing_prompt | coordinator_llm
 # ==============================================================================
 # 1. Define the State for the Graph
 # ==============================================================================
-# The state is a central object that is passed between all nodes in the graph.
+
 class AgentState(TypedDict):
     messages: List[BaseMessage]
     next_agent: str
@@ -64,7 +64,7 @@ class AgentState(TypedDict):
 # ==============================================================================
 # 2. Define the Nodes of the Graph
 # ==============================================================================
-# Each node is a function that performs an action and modifies the state.
+
 
 
 def coordinator_node(state: AgentState) -> AgentState:
@@ -72,10 +72,10 @@ def coordinator_node(state: AgentState) -> AgentState:
     This node runs the routing logic to decide which agent should act next.
     """
     print("---NODE: COORDINATOR---")
-    # Get the last message, which is the user's query
+    
     last_message = state["messages"][-1]
 
-    # Run the routing chain
+    
     result = routing_chain.invoke({"query": last_message.content})
     agent_name = result.content.strip()
 
@@ -93,21 +93,20 @@ def agent_node(
     agent_name = state["next_agent"]
     print(f"---NODE: {agent_name.upper()}---")
 
-    # Create the agent and get its tools
+    
     agent = agent_creator()
     available_tools = tool_getter()
 
-    # Run the agent's tool-calling loop
+    
     while True:
-        # Invoke the agent with the current message history
         response = agent.invoke({"messages": state["messages"]})
 
-        # If there are no tool calls, it's the final answer
+       
         if not response.tool_calls:
             print(f"---FINAL ANSWER from {agent_name}---")
             return {"messages": [response]}
 
-        # If there are tool calls, execute them
+      
         print(
             f"Agent requested tool calls: {[tc['name'] for tc in response.tool_calls]}"
         )
@@ -121,17 +120,16 @@ def agent_node(
                     ToolMessage(content=str(tool_output), tool_call_id=tool_call["id"])
                 )
 
-        # Add the agent's tool call request and the tool's output back to the history
+        
         state["messages"].append(response)
         state["messages"].extend(tool_messages)
-        # The loop will continue, feeding the new history back to the agent
+        
 
 
 # ==============================================================================
 # 3. Define the Edges and Build the Graph
 # ==============================================================================
 
-# Create agent-specific node functions by pre-filling the generic agent_node
 mobility_node = lambda state: agent_node(
     state, create_mobility_agent, get_mobility_tools
 )
@@ -143,7 +141,6 @@ cost_node = lambda state: agent_node(
 )
 
 
-# Define the conditional edge logic
 def router(state: AgentState) -> str:
     """
     This function directs the graph to the correct specialized agent node
@@ -156,22 +153,21 @@ def router(state: AgentState) -> str:
     elif "Cost Optimization Agent" in state["next_agent"]:
         return "cost_agent"
     else:
-        return "end"  # Or handle greetings, etc.
+        return "end"  
 
 
-# --- Build the graph ---
+
 workflow = StateGraph(AgentState)
 
-# Add nodes
+
 workflow.add_node("coordinator", coordinator_node)
 workflow.add_node("mobility_agent", mobility_node)
 workflow.add_node("inventory_agent", inventory_node)
 workflow.add_node("cost_agent", cost_node)
 
-# Set the entry point
+
 workflow.set_entry_point("coordinator")
 
-# Add conditional edges from the coordinator to the specialized agents
 workflow.add_conditional_edges(
     "coordinator",
     router,
@@ -183,12 +179,10 @@ workflow.add_conditional_edges(
     },
 )
 
-# Add edges from each agent back to the end (since they handle their own loops)
 workflow.add_edge("mobility_agent", END)
 workflow.add_edge("inventory_agent", END)
 workflow.add_edge("cost_agent", END)
 
-# Compile the graph into a runnable app
 app = workflow.compile()
 
 
@@ -207,14 +201,11 @@ if __name__ == "__main__":
     for i, q in enumerate(queries):
         print(f"\n{'='*60}\n🚀 EXECUTING QUERY {i+1}: {q}\n{'='*60}")
 
-        # The input to the graph is a list of messages
+
         initial_state = {"messages": [HumanMessage(content=q)]}
 
-        # Invoke the graph
         final_state = app.invoke(
             initial_state, {"recursion_limit": 10}
-        )  # Add recursion limit for safety
-
-        # The final answer is the last message in the state
+        )  
         final_answer = final_state["messages"][-1].content
         print(f"\n✅ FINAL RESPONSE:\n{final_answer}")
