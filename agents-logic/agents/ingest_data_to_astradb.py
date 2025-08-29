@@ -2,12 +2,11 @@ import os
 import csv
 from dotenv import load_dotenv
 from langchain_core.documents import Document
-from langchain_openai import OpenAIEmbeddings
-from langchain_astradb import AstraDBStore
+from langchain_astradb import AstraDBVectorStore
+from langchain_community.embeddings import HuggingFaceEmbeddings   # ✅ HuggingFace embeddings
 
-# --- Configuration ---
-# Use a relative path for reliability. Assumes a 'data' folder in your project root.
-PRODUCTS_FILE = "data/products.csv"
+
+PRODUCTS_FILE = "C:/Users/ASUS/Desktop/BTech Projects/LogiMAS/agents-logic/data/products.csv"
 ASTRA_DB_COLLECTION_NAME = "product_knowledge_base"
 
 
@@ -22,7 +21,6 @@ def ingest_data():
     required_vars = [
         "ASTRA_DB_API_ENDPOINT",
         "ASTRA_DB_APPLICATION_TOKEN",
-        "OPENAI_API_KEY",
     ]
     for var in required_vars:
         if var not in os.environ:
@@ -31,23 +29,28 @@ def ingest_data():
             )
             return
 
-    # 2. --- Initialize the Embedding Model ---
+    # 2. --- Initialize HuggingFace Embedding Model ---
     try:
-        embedding_model = OpenAIEmbeddings()
-        print("✅ OpenAI Embedding model initialized.")
+        embedding_model = HuggingFaceEmbeddings(
+            model_name="sentence-transformers/all-MiniLM-L6-v2"
+        )
+        print("✅ HuggingFace embedding model initialized.")
     except Exception as e:
-        print(f"Error initializing OpenAI embeddings: {e}")
+        print(f"Error initializing HuggingFace embeddings: {e}")
         return
 
     # 3. --- Initialize the AstraDB Vector Store ---
-    # This will now work correctly after you upgrade your packages.
-    vstore = AstraDBStore(
-        collection_name=ASTRA_DB_COLLECTION_NAME,
-        embedding=embedding_model,
-        api_endpoint=os.getenv("ASTRA_DB_API_ENDPOINT"),
-        token=os.getenv("ASTRA_DB_APPLICATION_TOKEN"),
-    )
-    print(f"✅ AstraDBStore initialized for collection '{ASTRA_DB_COLLECTION_NAME}'.")
+    try:
+        vstore = AstraDBVectorStore(
+            collection_name=ASTRA_DB_COLLECTION_NAME,
+            api_endpoint=os.getenv("ASTRA_DB_API_ENDPOINT"),
+            token=os.getenv("ASTRA_DB_APPLICATION_TOKEN"),
+            embedding=embedding_model,
+        )
+        print(f"✅ AstraDBVectorStore initialized for collection '{ASTRA_DB_COLLECTION_NAME}'.")
+    except Exception as e:
+        print(f"Error initializing AstraDBVectorStore: {e}")
+        return
 
     # 4. --- Read CSV and Create LangChain Documents ---
     if not os.path.exists(PRODUCTS_FILE):
@@ -89,8 +92,13 @@ def ingest_data():
 
     # 5. --- Add Documents to Astra DB ---
     print("Ingesting documents into Astra DB (this may take a while)...")
-    vstore.add_documents(documents_to_add, batch_size=20)
-    print(f"✅ Successfully ingested {len(documents_to_add)} documents into Astra DB.")
+    try:
+        vstore.add_documents(documents_to_add, batch_size=20)
+        print(f"✅ Successfully ingested {len(documents_to_add)} documents into Astra DB.")
+    except Exception as e:
+        print(f"Error ingesting documents: {e}")
+        return
+
     print("--- Ingestion Complete ---")
 
 

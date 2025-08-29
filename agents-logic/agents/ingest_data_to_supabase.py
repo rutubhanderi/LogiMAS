@@ -24,14 +24,14 @@ def insert_in_chunks(supabase_client: Client, table_name: str, records: list, ch
             print(f"  Inserted chunk {i // chunk_size + 1} into '{table_name}' ({len(chunk)} records)")
         except Exception as e:
             print(f"  ❌ Error inserting chunk into '{table_name}': {e}")
-            # Optional: break or log the failing chunk
-            # with open(f"failed_{table_name}_{i}.json", "w") as f:
-            #     json.dump(chunk, f)
 
 def ingest_data_to_supabase():
     print("--- Ingesting structured data into Supabase ---")
-    load_dotenv()
-    
+
+    # --- FIX: Always load .env from project root ---
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    load_dotenv(dotenv_path=os.path.join(BASE_DIR, ".env"))
+
     url = os.getenv("SUPABASE_URL")
     key = os.getenv("SUPABASE_SERVICE_KEY")
 
@@ -40,15 +40,14 @@ def ingest_data_to_supabase():
         return
 
     supabase: Client = create_client(url, key)
-    
+
     for csv_file, table_name in CSV_TO_TABLE_MAP.items():
         print(f"\nProcessing {csv_file} for table '{table_name}'...")
         try:
-            df = pd.read_csv(csv_file)
-            # Replace NaN with None for JSON compatibility
-            df = df.where(pd.notnull(df), None)
+            df = pd.read_csv(os.path.join(BASE_DIR, "data", csv_file))
+            df = df.where(pd.notnull(df), None)  # Replace NaN with None
             records = df.to_dict(orient='records')
-            
+
             if records:
                 insert_in_chunks(supabase, table_name, records)
                 print(f"✅ Successfully finished ingestion for '{table_name}'.")
@@ -59,7 +58,7 @@ def ingest_data_to_supabase():
             print(f"⚠️ Warning: {csv_file} not found. Skipping.")
         except Exception as e:
             print(f"❌ An unexpected error occurred with {csv_file}: {e}")
-            
+
     print("\n--- Supabase Ingestion Complete ---")
 
 if __name__ == "__main__":
