@@ -2,3 +2,12 @@ langchain
 groq
 langchain_groq
 python-dotenv
+langchain-openai
+langchain-astradb
+langchain-community
+cassandra-driver
+supabase
+pandas
+sqlalchemy
+psycopg2-binary
+Faker
