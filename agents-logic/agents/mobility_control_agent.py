@@ -19,7 +19,7 @@ if not groq_api_key:
 print("... API Key found. Initializing ChatGroq model...")
 try:
     agent_llm = ChatGroq(
-        model="llama3-70b-8192", temperature=0.2, groq_api_key=groq_api_key
+        model="llama-3.3-70b-versatile", temperature=0.2, groq_api_key=groq_api_key
     )
     print("✅ ChatGroq model initialized successfully.")
 except Exception as e:

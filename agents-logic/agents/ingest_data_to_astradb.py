@@ -3,7 +3,7 @@ import csv
 from dotenv import load_dotenv
 from langchain_core.documents import Document
 from langchain_astradb import AstraDBVectorStore
-from langchain_community.embeddings import HuggingFaceEmbeddings   # ✅ HuggingFace embeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings   #  HuggingFace embeddings
 
 
 PRODUCTS_FILE = "C:/Users/ASUS/Desktop/BTech Projects/LogiMAS/agents-logic/data/products.csv"
@@ -17,7 +17,7 @@ def ingest_data():
     print("--- Starting Data Ingestion to Astra DB ---")
     load_dotenv()
 
-    # 1. --- Check for necessary environment variables ---
+    
     required_vars = [
         "ASTRA_DB_API_ENDPOINT",
         "ASTRA_DB_APPLICATION_TOKEN",
@@ -29,7 +29,7 @@ def ingest_data():
             )
             return
 
-    # 2. --- Initialize HuggingFace Embedding Model ---
+   
     try:
         embedding_model = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2"
@@ -39,7 +39,7 @@ def ingest_data():
         print(f"Error initializing HuggingFace embeddings: {e}")
         return
 
-    # 3. --- Initialize the AstraDB Vector Store ---
+   
     try:
         vstore = AstraDBVectorStore(
             collection_name=ASTRA_DB_COLLECTION_NAME,
@@ -52,7 +52,6 @@ def ingest_data():
         print(f"Error initializing AstraDBVectorStore: {e}")
         return
 
-    # 4. --- Read CSV and Create LangChain Documents ---
     if not os.path.exists(PRODUCTS_FILE):
         print(f"Error: The file '{PRODUCTS_FILE}' was not found.")
         print(

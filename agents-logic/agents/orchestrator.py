@@ -28,7 +28,7 @@ from langchain.prompts import PromptTemplate
 load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 coordinator_llm = ChatGroq(
-    model="llama3-8b-8192", temperature=0, groq_api_key=groq_api_key
+    model="llama-3.3-70b-versatile", temperature=0, groq_api_key=groq_api_key
 )
 
 routing_prompt = PromptTemplate(

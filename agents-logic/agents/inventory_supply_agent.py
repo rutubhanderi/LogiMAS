@@ -21,7 +21,7 @@ load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 
 agent_llm = ChatGroq(
-    model="llama3-70b-8192", 
+    model="llama-3.3-70b-versatile", 
     temperature=0,  
     groq_api_key=groq_api_key
 )
