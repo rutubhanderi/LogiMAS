@@ -1,0 +1,20 @@
+# Used for data manipulation and CSV export
+pandas
+
+# For generating fake data (names, addresses, etc.)
+Faker
+
+# To read .env file
+python-dotenv
+
+# Python client for Supabase
+supabase
+
+# For numerical operations, especially handling NaN
+numpy
+
+# For generating sentence embeddings from text
+sentence-transformers
+
+# For intelligently splitting text documents into chunks
+langchain-text-splitters

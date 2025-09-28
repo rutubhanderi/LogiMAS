@@ -1,0 +1,4 @@
+warehouse_id,name,lat,lon,region
+1,SoCal Distribution Center A,34.134539,-118.392083,SoCal
+2,SoCal Distribution Center B,34.004041,-118.560952,SoCal
+3,SoCal Distribution Center C,34.112371,-118.36383,SoCal

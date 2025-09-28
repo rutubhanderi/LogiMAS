@@ -1,0 +1,13 @@
+
+INCIDENT REPORT
+Date: 2025-09-27 14:30:00
+Region: SoCal
+Location: I-405 Northbound near Exit 45
+Reported by: Field Agent 7
+Details:
+A multi-vehicle collision has resulted in the complete shutdown of all northbound lanes on the I-405. 
+Traffic is being diverted onto Sepulveda Blvd. 
+Estimated clearance time is 3-4 hours. 
+Heavy congestion is expected to impact all surrounding routes.
+LogiMAS vehicles with route plans including this segment must be rerouted immediately.
+Recommended alternate: Route 101 via Topanga Canyon Blvd, although expect moderate delays.
