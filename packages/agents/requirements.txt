@@ -1,0 +1,28 @@
+# Web server framework
+fastapi
+
+# ASGI server to run FastAPI
+uvicorn[standard]
+
+# Core AI orchestration library
+langchain
+
+# LangChain integration for Groq
+langchain-groq
+
+# LangChain integrations for community packages (like Supabase)
+langchain-community
+
+# For embedding generation (same as in the data pipeline)
+sentence-transformers
+
+# Python client for Supabase
+supabase
+
+# To read .env file
+python-dotenv
+
+# For data validation (used by FastAPI and LangChain)
+pydantic
+
+psycopg2-binary
