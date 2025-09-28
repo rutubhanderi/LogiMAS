@@ -68,3 +68,75 @@ The script will process a set of sample queries and display which specialized ag
 ---
 
 For any questions or contributions, please contact the developers via their GitHub profiles above.
+
+### File Structure
+
+```
+logimas/
+├── .vscode/                 # Recommended VSCode settings
+│   └── settings.json
+├── apps/
+│   └── web/                   # The Next.js Frontend and BFF
+│       ├── app/               # Next.js App Router
+│       │   ├── (admin)/         # Route group for admin dashboard
+│       │   │   ├── dashboard/
+│       │   │   │   └── page.tsx
+│       │   ├── (customer)/      # Route group for customer portal
+│       │   │   ├── track/
+│       │   │   │   └── [shipment_id]/
+│       │   │   │       └── page.tsx
+│       │   └── layout.tsx
+│       │   └── page.tsx
+│       ├── api/               # API routes (BFF)
+│       │   └── v1/
+│       │       ├── query/
+│       │       │   └── route.ts  # Endpoint to interact with the Coordinator Agent
+│       │       ├── telemetry/
+│       │       │   └── route.ts  # Endpoint for ingesting vehicle telemetry
+│       │       └── track/
+│       │           └── [shipment_id]/
+│       │               └── route.ts  # Endpoint to get tracking data
+│       ├── components/          # Reusable React components (e.g., Map, Charts)
+│       ├── lib/                 # Helper functions, Supabase client
+│       ├── public/              # Static assets (images, icons)
+│       ├── tailwind.config.ts   # Tailwind CSS configuration
+│       └── next.config.mjs      # Next.js configuration
+│
+├── packages/
+│   ├── agents/                # All Python-based agent logic (LangChain/LangGraph)
+│   │   └── logimas_agents/
+│   │       ├── agents/          # Individual agent definitions
+│   │       │   ├── coordinator.py
+│   │       │   ├── mobility.py
+│   │       │   ├── warehouse.py
+│   │       │   └── ...
+│   │       ├── chains/          # LangGraph workflow definitions
+│   │       │   └── graph.py
+│   │       ├── schemas/         # Pydantic schemas for structured outputs
+│   │       │   └── outputs.py
+│   │       ├── tools/           # Reusable tools for agents (DB access, API calls)
+│   │       │   ├── database.py
+│   │       │   ├── routing.py
+│   │       │   └── vector_store.py
+│   │       └── main.py          # Entrypoint to run agents (e.g., via a local FastAPI server)
+│   │
+│   └── data_pipeline/         # Scripts for data generation and ingestion
+│       ├── scripts/
+│       │   ├── 01_generate_synthetic_data.py
+│       │   ├── 02_seed_supabase_relational.py
+│       │   └── 03_embed_and_ingest_vectors.py
+│       ├── data/
+│       │   ├── raw/             # Source text files for embedding (e.g., incident_reports/)
+│       │   └── generated/       # Output location for generated CSVs
+│       └── requirements.txt     # Python dependencies for the data pipeline
+│
+├── supabase/                # Local Supabase instance configuration
+│   ├── migrations/          # SQL files for database schema
+│   │   └── 0001_initial_schema.sql
+│   └── config.toml          # Supabase project configuration
+│
+├── .env.example             # Template for environment variables
+├── .gitignore               # Standard git ignore file
+├── docker-compose.yml       # Orchestrates local dev services (Supabase, Ollama)
+└── README.md                # Project setup and instructions
+```
