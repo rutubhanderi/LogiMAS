@@ -1,19 +1,19 @@
 # Web server framework
 fastapi
-
-# ASGI server to run FastAPI
 uvicorn[standard]
 
-# Core AI orchestration library
-langchain
+# Core LangChain packages (ensure compatible versions)
+langchain>=0.2.0
+langchain-core>=0.2.0
+langchain-community>=0.2.0
 
-# LangChain integration for Groq
+# New, dedicated package for Groq integration
 langchain-groq
 
-# LangChain integrations for community packages (like Supabase)
-langchain-community
+# New, dedicated package for HuggingFace embeddings
+langchain-huggingface
 
-# For embedding generation (same as in the data pipeline)
+# For embedding generation (the underlying library)
 sentence-transformers
 
 # Python client for Supabase
@@ -25,4 +25,10 @@ python-dotenv
 # For data validation (used by FastAPI and LangChain)
 pydantic
 
+# Direct PostgreSQL driver for our custom retriever
 psycopg2-binary
+
+# ... (existing requirements)
+langgraph
+
+langchain-openai

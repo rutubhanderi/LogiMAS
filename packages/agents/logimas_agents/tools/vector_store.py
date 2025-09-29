@@ -7,7 +7,7 @@ import psycopg2
 from langchain_core.retrievers import BaseRetriever
 from langchain_core.callbacks import CallbackManagerForRetrieverRun
 from langchain_core.documents import Document
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 
 # --- Configuration ---
 # Load environment variables from the root .env file
@@ -34,6 +34,7 @@ class DirectPostgresRetriever(BaseRetriever):
     def _get_relevant_documents(
         self, query: str, *, run_manager: CallbackManagerForRetrieverRun
     ) -> List[Document]:
+        
         
         # 1. Embed the user's query using the sentence-transformer model
         query_embedding = self.embedding_model.embed_query(query)

@@ -1,18 +1,23 @@
-import { createClient } from '@supabase/supabase-js'
-import path from 'path';
-import dotenv from 'dotenv';
-dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
-// Get Supabase credentials from environment variables
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-console.log(supabaseUrl)
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-console.log(supabaseAnonKey)
-// Check if the environment variables are set
-if (!supabaseUrl) {
-  throw new Error('Missing Supabase URL  in environment variables.')
+import { createClient, SupabaseClient } from '@supabase/supabase-js'
+
+// Use a singleton pattern to ensure the client is created only once.
+let supabaseInstance: SupabaseClient | null = null;
+
+function getSupabaseClient() {
+  if (supabaseInstance) {
+    return supabaseInstance;
+  }
+
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error('Missing Supabase URL or Anon Key in environment variables.');
+  }
+
+  supabaseInstance = createClient(supabaseUrl, supabaseAnonKey);
+  return supabaseInstance;
 }
-if(!supabaseAnonKey){
-  throw new Error('Missing Anon Key in environment variables.')
-}
-// Create and export the Supabase client instance
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+
+// Export the function that gets the client instance
+export const supabase = getSupabaseClient();

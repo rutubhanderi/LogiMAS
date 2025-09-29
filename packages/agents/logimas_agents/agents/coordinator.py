@@ -5,17 +5,9 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_groq import ChatGroq
 from ..tools.vector_store import get_retriever
+from .shared import llm
 
-# Load environment variables
-dotenv_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../.env"))
-load_dotenv(dotenv_path=dotenv_path)
 
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-LLM_MODEL_NAME = os.getenv("LLM_MODEL_NAME", "llama3-8b-8192")
-
-# 1. Initialize the LLM
-# We set temperature to 0 for more deterministic, fact-based answers.
-llm = ChatGroq(temperature=0, groq_api_key=GROQ_API_KEY, model_name=LLM_MODEL_NAME)
 
 # 2. Create a Prompt Template
 # This template structures how we present the context and question to the LLM.
