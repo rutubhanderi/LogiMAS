@@ -1,11 +1,10 @@
-'use client'; // This must be a client component to use hooks
+'use client';
 
 import { useEffect, useState } from 'react';
-import { notFound } from "next/navigation";
 import { supabase } from '../../../../lib/supabaseClient';
-import { RealtimeTelemetry } from '../../../../components/ui/RealtimeTelemetry'; 
+import { RealtimeTelemetry } from '../../../../components/ui/RealtimeTelemetry';
 
-// Update the type to include the full vehicle object
+// Define the expected shape of the data for this page
 type ShipmentPageData = {
   shipment_id: string;
   status: string;
@@ -15,7 +14,7 @@ type ShipmentPageData = {
     order_id: string;
     items: { sku: string; name: string; price: number }[];
   } | null;
-  vehicles: { // We need the vehicle_id for the subscription
+  vehicles: {
     vehicle_id: string;
     vehicle_type: string;
   } | null;
@@ -25,8 +24,15 @@ export default function TrackShipmentPage({ params }: { params: { shipment_id: s
   const { shipment_id } = params;
   const [shipment, setShipment] = useState<ShipmentPageData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (!shipment_id) {
+      setIsLoading(false);
+      setError("No shipment ID provided.");
+      return;
+    }
+
     const fetchShipmentData = async () => {
       const { data, error } = await supabase
         .from('shipments')
@@ -41,28 +47,30 @@ export default function TrackShipmentPage({ params }: { params: { shipment_id: s
         .eq('shipment_id', shipment_id)
         .single();
 
-      if (error || !data) {
-        console.error("Error fetching shipment:", error?.message);
-        // In client components, we can't use notFound(), so we handle the state
-        setIsLoading(false);
-        return;
+      if (error) {
+        console.error("Error fetching shipment:", error.message);
+        setError(`Failed to fetch shipment data: ${error.message}`);
+      } else if (data) {
+        setShipment(data as ShipmentPageData);
       }
       
-      setShipment(data as ShipmentPageData);
       setIsLoading(false);
     };
 
     fetchShipmentData();
-  }, [shipment_id]);
+  }, [shipment_id]); // Re-fetch if the shipment ID in the URL changes
 
   // --- Render Logic ---
   if (isLoading) {
-    return <div className="p-8 text-center">Loading shipment details...</div>;
+    return <div className="p-8 text-center text-gray-500">Loading shipment details...</div>;
+  }
+
+  if (error) {
+    return <div className="p-8 text-center text-red-600">Error: {error}</div>;
   }
 
   if (!shipment) {
-    // A simple "not found" message for client-side rendering
-    return <div className="p-8 text-center text-red-500">Shipment not found.</div>;
+    return <div className="p-8 text-center text-orange-600">Shipment not found.</div>;
   }
 
   return (
@@ -79,7 +87,6 @@ export default function TrackShipmentPage({ params }: { params: { shipment_id: s
           </h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700 border-t pt-6">
-            {/* ... (static shipment details are the same) ... */}
             <div>
               <p className="text-sm font-medium text-gray-500">Current ETA</p>
               <p className="text-lg font-semibold">{new Date(shipment.current_eta).toLocaleString()}</p>
@@ -88,11 +95,23 @@ export default function TrackShipmentPage({ params }: { params: { shipment_id: s
               <p className="text-sm font-medium text-gray-500">Vehicle Type</p>
               <p className="text-lg">{shipment.vehicles?.vehicle_type || 'N/A'}</p>
             </div>
+             <div>
+              <p className="text-sm font-medium text-gray-500">Order ID</p>
+              <p className="text-lg font-mono">{shipment.orders?.order_id || 'N/A'}</p>
+            </div>
           </div>
 
-          {/* Add the Realtime Telemetry Component Here */}
-          {shipment.vehicles?.vehicle_id && (
-            <RealtimeTelemetry vehicleId={shipment.vehicles.vehicle_id} />
+          {/* Render the Realtime Telemetry Component, passing the necessary props */}
+          {shipment.vehicles?.vehicle_id ? (
+            <RealtimeTelemetry 
+              vehicleId={shipment.vehicles.vehicle_id}
+              vehicleType={shipment.vehicles.vehicle_type}
+            />
+          ) : (
+            <div className="mt-8 border-t pt-6">
+              <h3 className="text-lg font-semibold">Live Vehicle Location</h3>
+              <p className="mt-2 text-gray-500">No vehicle is currently assigned to this shipment.</p>
+            </div>
           )}
         </div>
       </div>

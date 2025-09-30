@@ -1,9 +1,22 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { supabase } from '../../lib/supabaseClient';
 
-// Define the structure of our telemetry data
+
+const LiveTrackingMap = dynamic(
+  () => import('../maps/LiveTrackingMap').then((mod) => mod.LiveTrackingMap),
+  { 
+    ssr: false,     
+    loading: () => (
+      <div style={{ height: '400px', background: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="rounded-md">
+        <p className="text-gray-500">Loading map...</p>
+      </div>
+    )
+  }
+);
+
 type Telemetry = {
   lat: number;
   lon: number;
@@ -11,14 +24,20 @@ type Telemetry = {
   ts: string;
 };
 
-export function RealtimeTelemetry({ vehicleId }: { vehicleId: string }) {
+
+interface RealtimeTelemetryProps {
+  vehicleId: string;
+  vehicleType: string;
+}
+
+export function RealtimeTelemetry({ vehicleId, vehicleType }: RealtimeTelemetryProps) {
   const [latest, setLatest] = useState<Telemetry | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!vehicleId) return;
 
-    // 1. Fetch the most recent telemetry point on initial load
+    // 1. Fetch the most recent telemetry point on initial component load
     const fetchInitialTelemetry = async () => {
       const { data, error } = await supabase
         .from('vehicle_telemetry')
@@ -28,8 +47,8 @@ export function RealtimeTelemetry({ vehicleId }: { vehicleId: string }) {
         .limit(1)
         .single();
       
-      if (error && error.code !== 'PGRST116') { // PGRST116 = no rows found
-        setError(error.message);
+      if (error && error.code !== 'PGRST116') { // PGRST116 means no rows were found, which is not an error
+        setError(`Failed to fetch initial telemetry: ${error.message}`);
       } else if (data) {
         setLatest(data);
       }
@@ -37,7 +56,7 @@ export function RealtimeTelemetry({ vehicleId }: { vehicleId: string }) {
 
     fetchInitialTelemetry();
 
-    // 2. Set up the real-time subscription
+    // 2. Set up the real-time subscription to listen for new 'INSERT' events
     const channel = supabase
       .channel(`telemetry:${vehicleId}`)
       .on(
@@ -46,59 +65,65 @@ export function RealtimeTelemetry({ vehicleId }: { vehicleId: string }) {
           event: 'INSERT',
           schema: 'public',
           table: 'vehicle_telemetry',
-          filter: `vehicle_id=eq.${vehicleId}`,
+          filter: `vehicle_id=eq.${vehicleId}`, // Only listen for changes for this specific vehicle
         },
         (payload) => {
-          console.log('New telemetry received!', payload.new);
+          console.log('New telemetry received via real-time!', payload.new);
           setLatest(payload.new as Telemetry);
         }
       )
       .subscribe((status, err) => {
         if (status === 'SUBSCRIBED') {
-          console.log(`Subscribed to telemetry for vehicle ${vehicleId}`);
+          console.log(`Successfully subscribed to telemetry updates for vehicle ${vehicleId}`);
         }
         if (err) {
-          console.error('Subscription error:', err);
+          console.error('Real-time subscription error:', err);
           setError('Could not subscribe to real-time updates.');
         }
       });
 
-    // 3. Clean up the subscription when the component unmounts
+    // 3. Clean up by removing the channel subscription when the component unmounts
     return () => {
       supabase.removeChannel(channel);
     };
 
-  }, [vehicleId]); // Re-run effect if vehicleId changes
+  }, [vehicleId]); // Re-run this effect if the vehicleId prop ever changes
 
   if (error) {
     return <div className="p-4 bg-red-100 text-red-700 rounded-md">Error: {error}</div>;
   }
 
   return (
-    <div className="mt-8">
-      <h3 className="text-lg font-semibold border-t pt-6">Live Telemetry</h3>
+    <div className="mt-8 border-t pt-6">
+      <h3 className="text-lg font-semibold mb-4">Live Vehicle Location</h3>
+      
+      {/* Conditionally render the map or a placeholder */}
       {!latest ? (
-        <p className="mt-2 text-gray-500">Awaiting first telemetry signal...</p>
+        <div style={{ height: '400px', background: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="rounded-md">
+          <p className="text-gray-500">Awaiting first telemetry signal...</p>
+        </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4 text-gray-700">
-          <div>
-            <p className="text-sm font-medium text-gray-500">Latitude</p>
-            <p className="font-mono">{latest.lat.toFixed(4)}</p>
-          </div>
-          <div>
-            <p className="text-sm font-medium text-gray-500">Longitude</p>
-            <p className="font-mono">{latest.lon.toFixed(4)}</p>
-          </div>
-          <div>
-            <p className="text-sm font-medium text-gray-500">Speed</p>
-            <p>{latest.speed_kmph} km/h</p>
-          </div>
-          <div className="col-span-2 sm:col-span-3">
-            <p className="text-sm font-medium text-gray-500">Last Update</p>
-            <p className="text-xs">{new Date(latest.ts).toLocaleString()}</p>
-          </div>
+        <div className="rounded-lg overflow-hidden border shadow-sm">
+          <LiveTrackingMap 
+            lat={latest.lat} 
+            lon={latest.lon}
+            vehicleType={vehicleType}
+            lastUpdate={latest.ts}
+          />
         </div>
       )}
+      
+      {/* Display supplementary telemetry data below the map */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4 text-gray-700">
+        <div>
+          <p className="text-sm font-medium text-gray-500">Speed</p>
+          <p className="font-semibold">{latest ? `${latest.speed_kmph} km/h` : 'N/A'}</p>
+        </div>
+        <div>
+          <p className="text-sm font-medium text-gray-500">Last Update</p>
+          <p className="text-xs">{latest ? new Date(latest.ts).toLocaleString() : 'N/A'}</p>
+        </div>
+      </div>
     </div>
   );
 }

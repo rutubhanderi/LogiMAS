@@ -28,7 +28,9 @@ pydantic
 # Direct PostgreSQL driver for our custom retriever
 psycopg2-binary
 
-# ... (existing requirements)
+
 langgraph
 
 langchain-openai
+
+langsmith

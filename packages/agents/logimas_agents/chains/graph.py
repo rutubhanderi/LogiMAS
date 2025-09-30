@@ -54,32 +54,37 @@ def final_responder_node(state: AgentState) -> AgentState:
 
 def route_logic(state: AgentState) -> AgentState:
     """
-    Router that now includes a check for inventory-related keywords.
+    Router that inspects the user query to determine the correct agent.
     """
     print("--- Routing Query ---")
     query = state.initial_query.lower()
     
+    # Define keywords for each agent's specialty
     uuid_pattern = r'[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}'
-    inventory_keywords = ["inventory", "stock", "how many", "quantity", "sku"]
+    
+    warehouse_keywords = ["inventory", "stock", "how many", "quantity", "sku", "pack", "box", "package", "packaging"]
+    
+    mobility_keywords = ["route", "traffic", "mobility", "highway", "i-405", "congestion", "road"]
 
+    # Check in a specific order of priority
     if re.search(uuid_pattern, query):
-        print("--- Decision: Route to Tracking Agent ---")
+        print("--- Decision: Route to Tracking Agent (UUID detected) ---")
         state.next_agent = "tracking"
-    elif any(keyword in query for keyword in inventory_keywords):
-        print("--- Decision: Route to Warehouse Agent ---")
+    elif any(keyword in query for keyword in warehouse_keywords):
+        print("--- Decision: Route to Warehouse Agent (Keyword match) ---")
         state.next_agent = "warehouse"
-    elif "route" in query or "traffic" in query or "mobility" in query:
-        print("--- Decision: Route to Mobility Agent ---")
+    elif any(keyword in query for keyword in mobility_keywords):
+        print("--- Decision: Route to Mobility Agent (Keyword match) ---")
         state.next_agent = "mobility"
     else:
-        print("--- Decision: Route to Coordinator Agent (General RAG) ---")
+        # Default to the general-purpose coordinator
+        print("--- Decision: Route to Coordinator Agent (Default) ---")
         state.next_agent = "coordinator"
     return state
 
 def get_next_agent(state: AgentState) -> str:
     """Helper function to read the router's decision from the state."""
     return state.next_agent
-
 
 # --- Graph Construction ---
 
