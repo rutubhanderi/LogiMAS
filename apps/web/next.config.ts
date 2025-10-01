@@ -1,10 +1,7 @@
-// File: apps/web/next.config.ts
 
 import dotenv from 'dotenv';
 import path from 'path';
 
-// --- This is the new, important part ---
-// Construct the full path to the .env file in the project root
 const envPath = path.resolve(process.cwd(), '../../.env');
 
 // Load the environment variables from the root file

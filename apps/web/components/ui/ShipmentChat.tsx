@@ -15,7 +15,6 @@ const UserAvatar = () => (
     YOU
   </div>
 );
-
 const AssistantAvatar = () => (
   <div className="w-8 h-8 rounded-full bg-slate-600 flex items-center justify-center flex-shrink-0">
     <svg
@@ -29,13 +28,13 @@ const AssistantAvatar = () => (
   </div>
 );
 
-export function AgentChat() {
+export function ShipmentChat() {
   const [query, setQuery] = useState<string>("");
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
       content:
-        "Hello! How can I help you with your logistics today? You can ask about shipment status, inventory, packaging, or recent incidents.",
+        "Hello! Please provide a Shipment ID to get its status or calculate its cost.",
     },
   ]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -67,12 +66,8 @@ export function AgentChat() {
       });
 
       if (!res.ok) {
-        const errorData = await res
-          .json()
-          .catch(() => ({
-            error: `API Error: ${res.status} ${res.statusText}`,
-          }));
-        throw new Error(errorData.error);
+        const errorData = await res.json();
+        throw new Error(errorData.error || `API Error: ${res.statusText}`);
       }
 
       const data = await res.json();
@@ -93,7 +88,7 @@ export function AgentChat() {
   };
 
   return (
-    <div className="bg-slate-800 border border-slate-700 rounded-xl shadow-2xl h-full flex flex-col text-white">
+    <div className="bg-white border border-gray-200 rounded-lg shadow-md h-[70vh] flex flex-col">
       {/* Message History Area */}
       <div className="flex-grow p-6 overflow-y-auto">
         <div className="space-y-6">
@@ -110,7 +105,7 @@ export function AgentChat() {
                 <UserAvatar />
               )}
               <div
-                className={`p-3 rounded-lg max-w-xl ${
+                className={`p-3 rounded-lg max-w-xl text-white ${
                   message.role === "user" ? "bg-blue-600" : "bg-slate-700"
                 }`}
               >
@@ -121,6 +116,7 @@ export function AgentChat() {
             </div>
           ))}
 
+          {/* --- THIS IS THE CORRECTED LOADING INDICATOR --- */}
           {isLoading && (
             <div className="flex items-start gap-3 flex-row">
               <AssistantAvatar />
@@ -133,34 +129,28 @@ export function AgentChat() {
               </div>
             </div>
           )}
+
           <div ref={messagesEndRef} />
         </div>
       </div>
 
       {/* Input Form Area */}
-      <div className="p-4 border-t border-slate-700 flex-shrink-0">
+      <div className="p-4 border-t border-gray-200 flex-shrink-0">
         <form onSubmit={handleSubmit} className="flex gap-2">
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Ask LogiMAS anything..."
-            className="w-full p-3 bg-slate-700 border border-slate-600 rounded-md placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="e.g., What is the status of shipment..."
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={isLoading}
           />
           <button
             type="submit"
-            className="bg-blue-600 font-semibold px-4 rounded-md hover:bg-blue-700 transition-colors disabled:bg-slate-600 disabled:cursor-not-allowed flex items-center justify-center"
+            className="bg-blue-600 font-semibold px-4 rounded-md text-white hover:bg-blue-700 disabled:bg-gray-400"
             disabled={isLoading}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className="w-5 h-5"
-            >
-              <path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.949a.75.75 0 00.95.826L11.25 7.5v5l-7.457 1.488a.75.75 0 00-.826.95l1.414 4.949a.75.75 0 00.95.826l12.5-2.5a.75.75 0 000-1.414l-12.5-2.5a.75.75 0 00-.95.826z" />
-            </svg>
+            Send
           </button>
         </form>
       </div>

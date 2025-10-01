@@ -1,23 +1,10 @@
-import { createClient, SupabaseClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/supabase-js'
 
-// Use a singleton pattern to ensure the client is created only once.
-let supabaseInstance: SupabaseClient | null = null;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-function getSupabaseClient() {
-  if (supabaseInstance) {
-    return supabaseInstance;
-  }
-
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (!supabaseUrl || !supabaseAnonKey) {
-    throw new Error('Missing Supabase URL or Anon Key in environment variables.');
-  }
-
-  supabaseInstance = createClient(supabaseUrl, supabaseAnonKey);
-  return supabaseInstance;
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('FATAL ERROR: Supabase URL or Anon Key is missing from environment variables.')
 }
 
-// Export the function that gets the client instance
-export const supabase = getSupabaseClient();
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)
