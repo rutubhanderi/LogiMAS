@@ -1,40 +1,33 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-// All navigation links that exist in the dashboard.
-// We are no longer filtering them by role.
 const navLinks = [
-  { name: "Chat", href: "/dashboard/chat" },
-  { name: "Tracking", href: "/dashboard/tracking" },
-  { name: "Knowledge Base", href: "/dashboard/knowledge" },
-  { name: "Analysis", href: "/dashboard/analysis" },
-  // You can add placeholder links here for features to be built later
-  // e.g., { name: 'Report Incident', href: '/dashboard/report-incident' },
+  { name: 'Chat', href: '/dashboard/chat' },
+  { name: 'Tracking', href: '/dashboard/tracking' },
+  { name: 'Knowledge Base', href: '/dashboard/knowledge' },
+  { name: 'Analysis', href: '/dashboard/analysis' },
 ];
 
 export function Sidebar() {
-  // usePathname is a client-side hook to get the current URL path.
-  // We need it to determine which link is "active".
   const pathname = usePathname();
 
   return (
-    <div className="w-64 bg-slate-800 text-white h-screen flex flex-col p-4 shadow-2xl">
-      <div className="text-2xl font-bold mb-10 pl-3">LogiMAS</div>
-
+    // Dark sidebar with a subtle border on the right
+    <div className="w-64 bg-[#0d1b2a] text-slate-300 h-screen flex flex-col p-4 border-r border-slate-700">
+      <div className="text-3xl font-bold text-white mb-12 pl-3 pt-3">LogiMAS</div>
+      
       <nav className="flex-grow">
-        <ul className="space-y-2">
+        <ul className="space-y-3">
           {navLinks.map((link) => (
             <li key={link.name}>
               <Link
                 href={link.href}
-                className={`block w-full text-left p-3 rounded-md transition-colors ${
-                  // This logic highlights the active link.
-                  // `startsWith` is better for nested routes.
+                className={`block w-full text-left p-3 rounded-lg transition-colors text-base font-medium ${
                   pathname.startsWith(link.href)
-                    ? "bg-blue-600 font-semibold"
-                    : "hover:bg-slate-700"
+                    ? "bg-blue-600 text-white shadow-md"
+                    : "hover:bg-slate-700/50 hover:text-white"
                 }`}
               >
                 {link.name}
@@ -43,8 +36,8 @@ export function Sidebar() {
           ))}
         </ul>
       </nav>
-
-      {/* The Sign Out button and role display are removed as they are not needed. */}
+      {/* Placeholder for a user profile or sign out button at the bottom */}
+      <div className="flex-shrink-0 h-16"></div>
     </div>
   );
 }

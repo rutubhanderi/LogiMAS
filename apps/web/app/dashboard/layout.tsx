@@ -6,9 +6,12 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen bg-gray-100">
+    // Set up the core flex layout: sidebar on the left, main content taking the rest of the space
+    <div className="flex h-screen bg-slate-100">
       <Sidebar />
-      <main className="flex-grow p-8 overflow-y-auto">{children}</main>
+      <main className="flex-grow p-6 sm:p-8 md:p-10 overflow-y-auto">
+        {children}
+      </main>
     </div>
   );
 }

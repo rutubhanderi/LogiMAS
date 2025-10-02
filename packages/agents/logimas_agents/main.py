@@ -86,41 +86,54 @@ async def agent_invoke_endpoint(request: QueryRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# === Data Fetching ===
+# # === Data Fetching ===
+# @app.get("/shipments/{shipment_id}", tags=["Data Fetching"])
+# async def get_shipment_details(shipment_id: str):
+#     """Fetches details for a single shipment. Protected: All roles."""
+#     try:
+#         res = (
+#             supabase_client.from_("shipments")
+#             .select("*, orders(*), vehicles(*)")
+#             .eq("shipment_id", shipment_id)
+#             .single()
+#             .execute()
+#         )
+#         if res.data:
+#             return res.data
+#         else:
+#             raise HTTPException(status_code=404, detail="Shipment not found")
+#     except Exception as e:
+#         raise HTTPException(
+#             status_code=500, detail=f"Error fetching shipment details: {str(e)}"
+#         )
+
 @app.get("/shipments/{shipment_id}", tags=["Data Fetching"])
 async def get_shipment_details(shipment_id: str):
-    """Fetches details for a single shipment. Protected: All roles."""
+    """
+    Fetches details for a single shipment using the correct foreign key joins.
+    """
     try:
-        res = (
-            supabase_client.from_("shipments")
-            .select("*, orders(*), vehicles(*)")
-            .eq("shipment_id", shipment_id)
-            .single()
-            .execute()
-        )
+        # --- THIS IS THE CORRECTED QUERY ---
+        # We explicitly tell Supabase how to join the tables based on our schema.
+        query = """
+            *,
+            orders ( * ),
+            vehicles ( * )
+        """
+        res = supabase_client.from_("shipments").select(query).eq("shipment_id", shipment_id).single().execute()
+
         if res.data:
             return res.data
         else:
             raise HTTPException(status_code=404, detail="Shipment not found")
     except Exception as e:
-        raise HTTPException(
-            status_code=500, detail=f"Error fetching shipment details: {str(e)}"
-        )
-
-
-# ... (all other imports and code are the same)
-
-
-# ... (all other imports and code are the same)
-
+        raise HTTPException(status_code=500, detail=f"Error fetching shipment details: {str(e)}")
 
 @app.get("/admin/kpis", tags=["Data Fetching"])
 async def get_admin_kpis():
     try:
         response = supabase_client.from_("daily_on_time_rate").select("*").execute()
 
-        # --- THIS IS THE FIX ---
-        # If data is a list (even an empty one), return it.
         if hasattr(response, "data") and isinstance(response.data, list):
             # Sort in Python if data exists
             sorted_data = sorted(
