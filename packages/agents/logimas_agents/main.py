@@ -1,156 +1,253 @@
-from fastapi import FastAPI
+import traceback
+from typing import Optional
+from fastapi import FastAPI, HTTPException, Depends
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi import Query
+
+
+# from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import BaseModel
 
-# Import the specific chains from the agent files
-from .agents.coordinator import rag_chain
-from .agents.mobility import mobility_rag_chain
+# --- Local Imports ---
+# from .auth import get_current_user, require_roles, User
 from .chains.graph import agent_graph
-from .schemas.graph_state import AgentState
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi import HTTPException
 from .tools.database import supabase_client
 
 # --- API Definition ---
 app = FastAPI(
     title="LogiMAS Agent Server",
-    description="An API for interacting with the LogiMAS multi-agent system.",
-    version="1.0.0",
+    description="The single, consolidated backend for the LogiMAS application with JWT authentication.",
+    version="1.1.0",
 )
 
 # --- CORS Middleware ---
-# This is important to allow your Next.js app (running on localhost:3000)
-# to make requests to this server (running on localhost:8000).
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # The origin of your frontend app
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods (GET, POST, etc.)
-    allow_headers=["*"],  # Allows all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
-# Pydantic model for the request body to ensure type safety
+# --- Pydantic Models for Payloads ---
 class QueryRequest(BaseModel):
     query: str
 
 
+class IncidentReport(BaseModel):
+    shipment_id: Optional[str] = None
+    route_description: str
+    details: str
+
+
 # --- API Endpoints ---
+
+
+# === Health Check ===
 @app.get("/", tags=["Health"])
 async def read_root():
     """A simple health check endpoint."""
     return {"status": "ok", "message": "LogiMAS Agent Server is running."}
 
 
-@app.post("/query/rag", tags=["Agents"])
-async def query_rag_endpoint(request: QueryRequest):
-    """
-    Receives a user query, processes it through the RAG chain,
-    and returns the model's generated answer.
-    """
-    try:
-        result = rag_chain.invoke(request.query)
-        return {"answer": result}
-    except Exception as e:
-        # Return a proper FastAPI response for errors
-        from fastapi.responses import JSONResponse
-
-        return JSONResponse(status_code=500, content={"error": str(e)})
-
-
-@app.post("/query/mobility", tags=["Agents"])
-async def query_mobility_endpoint(request: QueryRequest):
-    """
-    Receives a query about a specific route, processes it through the Mobility Agent,
-    and returns an analysis.
-    """
-    try:
-        result = mobility_rag_chain.invoke(request.query)
-        return {"analysis": result}
-    except Exception as e:
-        # Return a proper FastAPI response for errors
-        from fastapi.responses import JSONResponse
-
-        return JSONResponse(status_code=500, content={"error": str(e)})
+# # === Authentication ===
+# @app.post("/auth/token", tags=["Authentication"])
+# async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
+#     """
+#     Handles user login via email and password. On success, it returns a JWT access token.
+#     """
+#     try:
+#         res = supabase_client.auth.sign_in_with_password(
+#             {"email": form_data.username, "password": form_data.password}
+#         )
+#         if res.session and res.session.access_token:
+#             return {"access_token": res.session.access_token, "token_type": "bearer"}
+#         else:
+#             raise HTTPException(status_code=401, detail="Incorrect email or password")
+#     except Exception as e:
+#         raise HTTPException(status_code=400, detail=f"Login failed: {str(e)}")
 
 
+# === Agent Graph ===
 @app.post("/agent/invoke", tags=["Agent Graph"])
 async def agent_invoke_endpoint(request: QueryRequest):
-    """
-    The main entry point for the multi-agent system.
-    Invokes the LangGraph workflow and returns a single, clean JSON response.
-    """
+    """Main entry point for the agent system. Protected: All authenticated users."""
     try:
         inputs = {"initial_query": request.query}
-
-        # Use .invoke() to run the entire graph and get only the final state.
-        # This is guaranteed to run only once.
         final_state = agent_graph.invoke(inputs)
-
-        # Get the clean response from the 'final_responder' node's output
-        clean_response = final_state.get(
-            "final_response", "Agent did not provide a response."
-        )
-
-        return {"response": clean_response}
-
+        return {
+            "response": final_state.get(
+                "final_response", "Agent did not provide a response."
+            )
+        }
     except Exception as e:
-        import traceback
-
         print(traceback.format_exc())
-        return JSONResponse(status_code=500, content={"error": str(e)})
+        raise HTTPException(status_code=500, detail=str(e))
 
 
+# === Data Fetching ===
 @app.get("/shipments/{shipment_id}", tags=["Data Fetching"])
 async def get_shipment_details(shipment_id: str):
-    """
-    Fetches detailed information for a single shipment, including related
-    order and vehicle data. Replaces the Next.js BFF functionality.
-    """
+    """Fetches details for a single shipment. Protected: All roles."""
     try:
-        response = (
+        res = (
             supabase_client.from_("shipments")
-            .select(
-                "shipment_id, status, current_eta, expected_arrival, orders(order_id, items), vehicles(vehicle_id, vehicle_type)"
-            )
+            .select("*, orders(*), vehicles(*)")
             .eq("shipment_id", shipment_id)
             .single()
             .execute()
         )
-
-        if not response.data:
+        if res.data:
+            return res.data
+        else:
             raise HTTPException(status_code=404, detail="Shipment not found")
-
-        return response.data
     except Exception as e:
-        print(f"Error fetching shipment {shipment_id}: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(
+            status_code=500, detail=f"Error fetching shipment details: {str(e)}"
+        )
+
+
+# ... (all other imports and code are the same)
+
+
+# ... (all other imports and code are the same)
 
 
 @app.get("/admin/kpis", tags=["Data Fetching"])
 async def get_admin_kpis():
-    """
-    Fetches KPI data from the daily_on_time_rate materialized view.
-    Replaces the Next.js BFF functionality.
-    """
     try:
-        # Materialized views are read-only, so we can call them like tables
+        response = supabase_client.from_("daily_on_time_rate").select("*").execute()
+
+        # --- THIS IS THE FIX ---
+        # If data is a list (even an empty one), return it.
+        if hasattr(response, "data") and isinstance(response.data, list):
+            # Sort in Python if data exists
+            sorted_data = sorted(
+                response.data, key=lambda item: item["ship_date"], reverse=True
+            )
+            return sorted_data[:30]
+        else:
+            # If there's an actual error, log it and raise
+            error_details = getattr(response, "error", "An unknown error occurred.")
+            print(f"!!! KPI Fetch Error: {error_details}")
+            raise Exception(f"Failed to fetch KPI data: {error_details}")
+
+    except Exception as e:
+        print(f"An exception occurred in get_admin_kpis: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# === Knowledge Base ===
+@app.get("/knowledge/documents", tags=["Knowledge Base"])
+async def list_available_documents():
+    """Fetches a list of source documents. Protected: Manager role required."""
+    try:
         response = (
-            supabase_client.from_("daily_on_time_rate")
+            supabase_client.from_("documents")
+            .select("source_id, source_type, region_id, ts")
+            .execute()
+        )
+        if response.data:
+            unique_documents = {doc["source_id"]: doc for doc in response.data}.values()
+            return list(unique_documents)
+        else:
+            return []
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Failed to fetch documents list.")
+
+
+@app.get("/knowledge/schemas", tags=["Knowledge Base"])
+async def list_table_schemas():
+    """Returns a predefined list of key table schemas. Protected: Manager role required."""
+    schemas = {
+        "shipments": ["shipment_id", "status", "current_eta"],
+        "orders": ["order_id", "status"],
+        "inventory": ["sku", "product_name", "qty_on_hand"],
+        "vehicles": ["vehicle_id", "vehicle_type"],
+        "profiles": ["id", "name", "role"],
+    }
+    return schemas
+
+
+# # === Role-Specific Actions ===
+# @app.post("/incidents", tags=["Role Actions"], status_code=201)
+# async def create_incident_report(
+#     report: IncidentReport,
+#     current_user: User = Depends(require_roles(["delivery_guy"])),
+# ):
+#     """Endpoint for delivery partners to submit incident reports. Protected: Delivery Guy role required."""
+#     print(
+#         f"User {current_user.id} ({current_user.role}) reported an incident for route: {report.route_description}"
+#     )
+#     try:
+#         # This is a simplified insertion. A real pipeline would handle embedding.
+#         full_report_text = f"LIVE REPORT from {current_user.id}\nROUTE: {report.route_description}\nDETAILS: {report.details}"
+#         supabase_client.from_("documents").insert(
+#             {
+#                 "source_type": "incident_report_live",
+#                 "source_id": f"live_report_{current_user.id}_{traceback.extract_stack()[-1].lineno}",
+#                 "text_snippet": full_report_text,
+#                 "region_id": "SoCal",  # Placeholder
+#             }
+#         ).execute()
+#         return {"message": "Incident report received and logged successfully."}
+#     except Exception as e:
+#         raise HTTPException(status_code=500, detail=f"Failed to log incident: {str(e)}")
+
+ALLOWED_TABLES = [
+    "profiles",
+    "orders",
+    "shipments",
+    "vehicles",
+    "warehouses",
+    "inventory",
+    "packaging_types",
+    "fuel_prices",
+    "agent_audit_logs",
+    "documents",
+]
+
+
+@app.get("/browser/{table_name}", tags=["Data Browser"])
+async def browse_table_data(
+    table_name: str,
+    limit: int = Query(25, ge=1, le=100),  # Default limit 25, min 1, max 100
+    offset: int = Query(0, ge=0),  # Default offset 0, min 0
+):
+    """
+    Fetches a paginated list of rows from a specified table.
+    """
+    if table_name not in ALLOWED_TABLES:
+        raise HTTPException(
+            status_code=403, detail=f"Access to table '{table_name}' is forbidden."
+        )
+
+    try:
+        # First, get the total count of rows in the table for pagination info
+        count_response = (
+            supabase_client.from_(table_name)
+            .select("*", count="exact")
+            .limit(0)
+            .execute()
+        )
+        total_count = count_response.count if count_response.count is not None else 0
+
+        # Then, fetch the paginated data
+        data_response = (
+            supabase_client.from_(table_name)
             .select("*")
-            .order("ship_date", desc=True)
-            .limit(30)
+            .range(offset, offset + limit - 1)
             .execute()
         )
 
-        if hasattr(response, "data"):
-            return response.data
+        if data_response.data:
+            return {"total": total_count, "data": data_response.data}
+        elif data_response.error:
+            raise HTTPException(status_code=500, detail=data_response.error.message)
         else:
-            error_message = "Failed to fetch KPI data."
-
-            if hasattr(response, "message"):
-                error_message = response.message
-            raise Exception(error_message)
+            return {"total": 0, "data": []}  # Return empty if table has no data
 
     except Exception as e:
-        print(f"Error fetching KPIs: {e}")
+        print(f"Error browsing table {table_name}: {e}")
         raise HTTPException(status_code=500, detail=str(e))

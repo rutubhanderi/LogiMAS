@@ -1,23 +1,21 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css"; 
-import 'leaflet/dist/leaflet.css';
-const inter = Inter({ subsets: ["latin"] });
+import { AuthProvider } from "../contexts/AuthContext";
+import "./globals.css";
+import "leaflet/dist/leaflet.css";
 
-export const metadata: Metadata = {
-  title: "LogiMAS Tracking",
+export const metadata = {
+  title: "LogiMAS Platform",
   description: "Logistics Multi-Agent System",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-50`}>
-        <main>{children}</main>
+      <body className="bg-gray-50">
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );

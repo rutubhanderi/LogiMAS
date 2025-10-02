@@ -3,12 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-// The navigation links for the dashboard sidebar.
+// All navigation links that exist in the dashboard.
+// We are no longer filtering them by role.
 const navLinks = [
   { name: "Chat", href: "/dashboard/chat" },
   { name: "Tracking", href: "/dashboard/tracking" },
   { name: "Knowledge Base", href: "/dashboard/knowledge" },
   { name: "Analysis", href: "/dashboard/analysis" },
+  // You can add placeholder links here for features to be built later
+  // e.g., { name: 'Report Incident', href: '/dashboard/report-incident' },
 ];
 
 export function Sidebar() {
@@ -27,8 +30,9 @@ export function Sidebar() {
               <Link
                 href={link.href}
                 className={`block w-full text-left p-3 rounded-md transition-colors ${
-                  // This logic highlights the link if the current path matches the link's href.
-                  pathname === link.href
+                  // This logic highlights the active link.
+                  // `startsWith` is better for nested routes.
+                  pathname.startsWith(link.href)
                     ? "bg-blue-600 font-semibold"
                     : "hover:bg-slate-700"
                 }`}
@@ -40,7 +44,7 @@ export function Sidebar() {
         </ul>
       </nav>
 
-      {/* The Sign Out button remains commented out or removed since auth is disabled. */}
+      {/* The Sign Out button and role display are removed as they are not needed. */}
     </div>
   );
 }

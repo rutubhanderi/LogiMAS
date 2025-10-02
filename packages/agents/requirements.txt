@@ -2,35 +2,28 @@
 fastapi
 uvicorn[standard]
 
-# Core LangChain packages (ensure compatible versions)
+# Core LangChain packages
 langchain>=0.2.0
 langchain-core>=0.2.0
 langchain-community>=0.2.0
-
-# New, dedicated package for Groq integration
 langchain-groq
-
-# New, dedicated package for HuggingFace embeddings
 langchain-huggingface
+langgraph
+langsmith
+langchain-openai
 
-# For embedding generation (the underlying library)
+# AI/Data libraries
 sentence-transformers
+pydantic
 
-# Python client for Supabase
+# Database/API clients
 supabase
+psycopg2-binary
 
 # To read .env file
 python-dotenv
 
-# For data validation (used by FastAPI and LangChain)
-pydantic
-
-# Direct PostgreSQL driver for our custom retriever
-psycopg2-binary
-
-
-langgraph
-
-langchain-openai
-
-langsmith
+# --- Auth Libraries ---
+python-jose[cryptography]
+gotrue
+python-multipart
