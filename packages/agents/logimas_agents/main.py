@@ -85,36 +85,13 @@ async def agent_invoke_endpoint(request: QueryRequest):
         print(traceback.format_exc())
         raise HTTPException(status_code=500, detail=str(e))
 
-
-# # === Data Fetching ===
-# @app.get("/shipments/{shipment_id}", tags=["Data Fetching"])
-# async def get_shipment_details(shipment_id: str):
-#     """Fetches details for a single shipment. Protected: All roles."""
-#     try:
-#         res = (
-#             supabase_client.from_("shipments")
-#             .select("*, orders(*), vehicles(*)")
-#             .eq("shipment_id", shipment_id)
-#             .single()
-#             .execute()
-#         )
-#         if res.data:
-#             return res.data
-#         else:
-#             raise HTTPException(status_code=404, detail="Shipment not found")
-#     except Exception as e:
-#         raise HTTPException(
-#             status_code=500, detail=f"Error fetching shipment details: {str(e)}"
-#         )
-
 @app.get("/shipments/{shipment_id}", tags=["Data Fetching"])
 async def get_shipment_details(shipment_id: str):
     """
     Fetches details for a single shipment using the correct foreign key joins.
     """
     try:
-        # --- THIS IS THE CORRECTED QUERY ---
-        # We explicitly tell Supabase how to join the tables based on our schema.
+    
         query = """
             *,
             orders ( * ),

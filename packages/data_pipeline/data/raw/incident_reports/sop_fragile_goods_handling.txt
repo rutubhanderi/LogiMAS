@@ -1,0 +1,12 @@
+STANDARD OPERATING PROCEDURE (SOP)
+
+Document ID: WH-SOP-004
+Title: Handling of Fragile Goods
+Effective Date: 2025-01-01
+
+Procedure:
+1. All items classified as 'Fragile' must be identified at receiving.
+2. Packaging for fragile items must include at least 2 inches of bubble wrap or foam padding on all sides.
+3. Boxes containing fragile items must be clearly marked with "FRAGILE - HANDLE WITH CARE" labels.
+4. When palletizing, fragile boxes must NOT be placed on the bottom layer. They should always be placed on the top-most layer of a pallet, with no other items stacked on top of them.
+5. Forklift operators must reduce speed by 50% when transporting pallets containing fragile goods.
