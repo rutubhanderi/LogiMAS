@@ -132,3 +132,43 @@ def log_agent_decision(agent_name: str, query: str, decision: dict | str):
     except Exception as e:
         print(f"!!! CRITICAL WARNING: An exception occurred during audit logging: {e}")
         print(traceback.format_exc())
+
+# --- RBAC Utility Functions ---
+def get_user_roles(user_id: str) -> list[str]:
+    """Retrieves all role names assigned to a user."""
+    try:
+        response = supabase_client.rpc('get_user_roles', {'user_uuid': user_id}).execute()
+        if response.data:
+            return [role['role_name'] for role in response.data]
+        return []
+    except Exception as e:
+        print(f"Error fetching roles for user {user_id}: {e}")
+        return []
+
+def get_user_permissions(user_id: str) -> list[str]:
+    """Retrieves all permission names for a user based on their roles."""
+    try:
+        response = supabase_client.rpc('get_user_permissions', {'user_uuid': user_id}).execute()
+        if response.data:
+            return [perm['permission_name'] for perm in response.data]
+        return []
+    except Exception as e:
+        print(f"Error fetching permissions for user {user_id}: {e}")
+        return []
+
+def user_has_permission(user_id: str, permission: str) -> bool:
+    """Checks if a user has a specific permission."""
+    try:
+        response = supabase_client.rpc('user_has_permission', {
+            'user_uuid': user_id,
+            'perm_name': permission
+        }).execute()
+        return bool(response.data)
+    except Exception as e:
+        print(f"Error checking permission '{permission}' for user {user_id}: {e}")
+        return False
+
+def user_has_role(user_id: str, role_name: str) -> bool:
+    """Checks if a user has a specific role."""
+    roles = get_user_roles(user_id)
+    return role_name in roles

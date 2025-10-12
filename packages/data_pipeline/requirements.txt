@@ -13,8 +13,10 @@ supabase
 # For numerical operations, especially handling NaN
 numpy
 
+# For progress bars
+tqdm
+
 # For generating sentence embeddings from text
 sentence-transformers
 
 # For intelligently splitting text documents into chunks
-langchain-text-splitters

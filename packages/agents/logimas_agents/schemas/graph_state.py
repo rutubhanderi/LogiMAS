@@ -7,6 +7,11 @@ class AgentState(BaseModel):
     """
     initial_query: str = Field(description="The original user query.")
     
+    # User authentication and authorization fields
+    user_id: Optional[str] = Field(default=None, description="The ID of the authenticated user.")
+    user_role: Optional[str] = Field(default=None, description="The role of the authenticated user.")
+    user_permissions: List[str] = Field(default_factory=list, description="List of user permissions.")
+    
     # The agent router will populate this field
     next_agent: Optional[str] = Field(
         default=None, 
