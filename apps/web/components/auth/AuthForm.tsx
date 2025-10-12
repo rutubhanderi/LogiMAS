@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../../contexts/AuthContext";
-import { supabase } from "../../lib/supabaseClient";
+import axios from "axios";
 import Link from "next/link";
 
 export function AuthForm({ mode }: { mode: "login" | "signup" }) {
@@ -23,46 +23,40 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
     setMessage(null);
     setIsLoading(true);
 
+    if (mode === "signup") {
+      // NOTE: This requires a new `/users/signup` endpoint on your FastAPI backend
+      // which has not been built yet.
+      setMessage(
+        "Sign-up functionality is handled directly in the Supabase dashboard for this demo."
+      );
+      setIsLoading(false);
+      return;
+    }
+
     try {
-      if (mode === "signup") {
-        // Sign up with Supabase
-        const { data, error: signUpError } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            data: {
-              name: name,
-            },
-          },
-        });
+      const formData = new URLSearchParams();
+      formData.append("username", email);
+      formData.append("password", password);
 
-        if (signUpError) throw signUpError;
+      const response = await axios.post(
+        "http://127.0.0.1:8000/auth/token",
+        formData,
+        {
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        }
+      );
 
-        setMessage(
-          "Account created! Please check your email to confirm your account."
-        );
-        setIsLoading(false);
-        return;
-      }
-
-      // Login with Supabase
-      const { data, error: signInError } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-
-      if (signInError) throw signInError;
-
-      if (data.session) {
-        // Store the session token
-        login(data.session.access_token);
+      const { access_token } = response.data;
+      if (access_token) {
+        login(access_token);
         router.push("/dashboard");
       } else {
-        throw new Error("Login successful, but no session was created.");
+        throw new Error("Login successful, but no token was provided.");
       }
     } catch (err: any) {
       setError(
-        err.message || "Authentication failed. Please check your credentials."
+        err.response?.data?.detail ||
+          "Login failed. Please check your credentials."
       );
     } finally {
       setIsLoading(false);
