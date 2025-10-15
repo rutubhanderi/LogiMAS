@@ -2,6 +2,7 @@ import os
 from typing import List, Any
 from dotenv import load_dotenv
 import psycopg2
+from pgvector.psycopg2 import register_vector # Import the vector register
 
 from langchain_core.retrievers import BaseRetriever
 from langchain_core.callbacks import CallbackManagerForRetrieverRun
@@ -35,18 +36,27 @@ class DirectPostgresRetriever(BaseRetriever):
     ) -> List[Document]:
         
         query_embedding = self.embedding_model.embed_query(query)
-        embedding_string = str(query_embedding)
         conn = None
         try:
             conn = psycopg2.connect(self.db_uri)
+            register_vector(conn)
             cur = conn.cursor()
-            sql_query = "SELECT * FROM match_documents(%s::vector, %s, '{}'::jsonb);"
-            cur.execute(sql_query, (embedding_string, self.k_results))
+
+            # --- THIS IS THE CORRECTED LINE ---
+            sql_query = "SELECT * FROM match_documents(%s::vector, %s);"
+            
+            # The rest of the code remains the same
+            cur.execute(sql_query, (query_embedding, self.k_results))
+            
             results = cur.fetchall()
             documents = []
             for row in results:
-                doc_id, content, metadata, similarity = row
-                metadata['similarity_score'] = similarity
+                doc_id, content, source, similarity = row
+                metadata = {
+                    'doc_id': str(doc_id),
+                    'source': source,
+                    'similarity_score': similarity
+                }
                 doc = Document(page_content=content, metadata=metadata)
                 documents.append(doc)
             return documents

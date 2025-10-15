@@ -6,18 +6,16 @@ from datetime import datetime, timezone
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-
-# --- Local Imports ---
+import json
 from .chains.graph import agent_graph
 from .tools.database import supabase_client
-# Correctly import the reusable embedding function
 from .tools.vector_store import create_embedding
 
 # --- API Definition ---
 app = FastAPI(
     title="LogiMAS Agent Server",
-    description="The single, consolidated backend for the LogiMAS application.",
-    version="1.2.0", # Version bump for new feature
+    description="Backend for the LogiMAS application.",
+    version="1.2.0", 
 )
 
 # --- CORS Middleware ---
@@ -75,9 +73,7 @@ async def create_incident_report(report: IncidentReport):
             "embedding_model": os.getenv("EMBEDDING_MODEL_NAME")
         }).execute()
         
-        # --- THIS IS THE CORRECTED CHECK ---
         if not response.data:
-            # If the insert fails, the error details might be in a different attribute
             error_details = getattr(response, 'error', 'Unknown database error')
             raise Exception(f"Database insertion failed: {error_details}")
 
@@ -101,18 +97,30 @@ async def get_shipment_details(shipment_id: str):
 
 @app.get("/admin/kpis", tags=["Data Fetching"])
 async def get_admin_kpis():
-    """Fetches KPI data from the daily_on_time_rate materialized view."""
     try:
         response = supabase_client.from_("daily_on_time_rate").select("*").execute()
+
         if response.data and isinstance(response.data, list):
-            sorted_data = sorted(response.data, key=lambda item: item["ship_date"], reverse=True)
-            return sorted_data[:30]
-        else:
-            raise Exception("Failed to fetch KPI data.")
+            sorted_data = sorted(response.data, key=lambda item: item["delivery_date"], reverse=True)
+
+            normalized = [
+                {
+                    "ship_date": item["delivery_date"],
+                    "total_shipments": item.get("total_deliveries", 0),
+                    "on_time_shipments": item.get("on_time_deliveries", 0),
+                    # Convert string percentage → float (rounded to 2 decimals)
+                    "on_time_percentage": round(float(item.get("on_time_percentage", 0)), 2)
+                }
+                for item in sorted_data
+            ]
+
+            return normalized[:30]  # send last 30 days
+        return []
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-ALLOWED_TABLES = ["profiles", "orders", "shipments", "vehicles", "warehouses", "inventory", "packaging_types", "fuel_prices", "agent_audit_logs", "documents"]
+
+ALLOWED_TABLES = ["orders", "shipments", "vehicles", "warehouses", "inventory", "packaging_types", "fuel_prices", "agent_audit_logs", "documents"]
 @app.get("/browser/{table_name}", tags=["Data Browser"])
 async def browse_table_data(table_name: str, limit: int = Query(25, ge=1, le=100), offset: int = Query(0, ge=0)):
     """Fetches a paginated list of rows from a specified table."""

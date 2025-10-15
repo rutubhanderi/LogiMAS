@@ -35,30 +35,33 @@ export function DailyPerformanceChart({ data }: DailyPerformanceChartProps) {
     .reverse(); // Reverse to show oldest to newest
 
   return (
-    // ResponsiveContainer makes the chart fill its parent container
-    <ResponsiveContainer width="100%" height={400}>
-      <BarChart
-        data={formattedData}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
-        <XAxis dataKey="date" stroke="#6b7280" />
-        <YAxis unit="%" stroke="#6b7280" />
-        <Tooltip
-          contentStyle={{
-            backgroundColor: "#1f2937", // Dark background for tooltip
-            borderColor: "#374151",
-            color: "#ffffff",
+    // To ensure the chart is responsive and visible,
+    // wrap it in a container that has a defined aspect ratio or height.
+    <div style={{ width: '100%', height: 400 }}>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          data={formattedData}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
           }}
-        />
-        <Legend />
-        <Bar dataKey="On-Time %" fill="#4f46e5" />
-      </BarChart>
-    </ResponsiveContainer>
+        >
+          <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
+          <XAxis dataKey="date" stroke="#6b7280" />
+          <YAxis unit="%" stroke="#6b7280" />
+          <Tooltip
+            contentStyle={{
+              backgroundColor: "#1f2937", 
+              borderColor: "#374151",
+              color: "#ffffff",
+            }}
+          />
+          <Legend />
+          <Bar dataKey="On-Time %" fill="#4f46e5" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
