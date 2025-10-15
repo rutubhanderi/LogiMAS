@@ -25,7 +25,7 @@ export default function AnalysisPage() {
         const response = await fetch("http://127.0.0.1:8000/admin/kpis");
 
         if (!response.ok) {
-          // If the server returns a 500 error, try to get the detailed message
+          // If the server returns an error, try to get the detailed message
           const errorData = await response.json();
           throw new Error(
             errorData.detail || `Request failed with status ${response.status}`
@@ -105,12 +105,12 @@ export default function AnalysisPage() {
       </div>
 
       <div className="bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-xl font-semibold mb-4">
+        {/* CHANGE: Added 'text-gray-800' to make this header visible */}
+        <h2 className="text-xl font-semibold mb-4 text-gray-800">
           Daily On-Time Delivery Data
         </h2>
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
-            {/* ... (table head is the same) ... */}
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
@@ -131,12 +131,13 @@ export default function AnalysisPage() {
               {kpis.length > 0 ? (
                 kpis.map((day) => (
                   <tr key={day.ship_date}>
-                    <td className="px-6 py-4">
+                    {/* CHANGE: Added 'text-gray-900' to ensure table data is visible */}
+                    <td className="px-6 py-4 text-gray-900">
                       {new Date(day.ship_date).toLocaleDateString()}
                     </td>
-                    <td className="px-6 py-4">{day.total_shipments}</td>
-                    <td className="px-6 py-4">{day.on_time_shipments}</td>
-                    <td className="px-6 py-4">{day.on_time_percentage}%</td>
+                    <td className="px-6 py-4 text-gray-900">{day.total_shipments}</td>
+                    <td className="px-6 py-4 text-gray-900">{day.on_time_shipments}</td>
+                    <td className="px-6 py-4 text-gray-900">{day.on_time_percentage}%</td>
                   </tr>
                 ))
               ) : (

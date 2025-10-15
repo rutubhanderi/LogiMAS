@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 // List of tables that are available for browsing
 const BROWSEABLE_TABLES = [
-  "profiles", "orders", "shipments", "vehicles", "warehouses", 
+   "orders", "shipments", "vehicles", "warehouses", 
   "inventory", "packaging_types", "fuel_prices", "agent_audit_logs", "documents"
 ];
 
