@@ -1,0 +1,22 @@
+[
+  {
+    "fuel_type": "Diesel",
+    "cost_per_liter": 128.01,
+    "last_updated": "2025-10-21T23:19:18.232674"
+  },
+  {
+    "fuel_type": "Petrol",
+    "cost_per_liter": 96.6,
+    "last_updated": "2025-10-21T23:19:18.232757"
+  },
+  {
+    "fuel_type": "CNG",
+    "cost_per_liter": 115.61,
+    "last_updated": "2025-10-21T23:19:18.232772"
+  },
+  {
+    "fuel_type": "EV",
+    "cost_per_liter": 65.97,
+    "last_updated": "2025-10-21T23:19:18.232778"
+  }
+]

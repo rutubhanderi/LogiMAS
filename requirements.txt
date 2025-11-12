@@ -1,0 +1,54 @@
+# ==============================
+# 🚀 Core Web Framework
+# ==============================
+fastapi
+uvicorn[standard]
+
+# ==============================
+# 🧠 LangChain & LLM Ecosystem
+# ==============================
+langchain==0.3.27
+langchain-core
+langchain-community
+langchain-groq
+langchain-huggingface
+langchain-openai
+langchain-text-splitters
+langgraph
+langsmith
+
+# ==============================
+# 🤖 AI / NLP / Embeddings
+# ==============================
+sentence-transformers
+numpy
+pandas
+
+# ==============================
+# 🗄️ Database & API Clients
+# ==============================
+supabase
+psycopg[binary]
+psycopg2-binary
+sqlalchemy
+pgvector
+
+# ==============================
+# 🔐 Authentication & Security
+# ==============================
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt==4.0.1
+gotrue
+
+# ==============================
+# 🧩 Utility Libraries
+# ==============================
+python-dotenv
+python-multipart
+Faker
+httpx
+pydantic[email]
+
+#extras
+geopy

@@ -1,0 +1,122 @@
+[
+  {
+    "doc_id": "8ff6261f-6353-41ee-b6b2-d5e3446051c1",
+    "source_type": "faq",
+    "source_id": "143a1893-db9f-4fac-bedc-bb44352fa07e",
+    "region_id": "west",
+    "ts": "2025-10-21T23:19:18.237761",
+    "chunk_index": 0,
+    "text_snippet": "Eius suscipit fugit sequi. Quibusdam rem cupiditate. Rerum quos explicabo deserunt enim laborum id repudiandae. Eos minus officia ipsum sit.",
+    "embedding_model": "text-embedding-3-small"
+  },
+  {
+    "doc_id": "85ae0044-c1b0-4cc7-bb99-3ca06f055650",
+    "source_type": "policy",
+    "source_id": "99e9dc18-8d6e-48e3-92db-be9027571442",
+    "region_id": "north",
+    "ts": "2025-10-21T23:19:18.238110",
+    "chunk_index": 0,
+    "text_snippet": "Ea minima odit dicta dolor. Corporis eaque quo voluptas voluptatem recusandae. Reprehenderit veniam adipisci. Nam repellat illum optio assumenda. Iure veniam delectus sint commodi. Quia dicta dolore nemo fugiat dolorem.",
+    "embedding_model": "text-embedding-3-small"
+  },
+  {
+    "doc_id": "248ab7f6-a20d-4522-a74e-36f739ea96fd",
+    "source_type": "shipment",
+    "source_id": "e8e08351-605f-4fcd-bddd-8792f9491412",
+    "region_id": "north",
+    "ts": "2025-10-21T23:19:18.238335",
+    "chunk_index": 0,
+    "text_snippet": "Doloremque saepe quibusdam. Quaerat explicabo expedita possimus unde. Autem ut dignissimos perspiciatis.",
+    "embedding_model": "text-embedding-3-small"
+  },
+  {
+    "doc_id": "f14180d2-5a92-4da3-b25a-494e44590a02",
+    "source_type": "shipment",
+    "source_id": "a5e55498-8eb5-4090-bffa-2d18f2eb41f4",
+    "region_id": "west",
+    "ts": "2025-10-21T23:19:18.238408",
+    "chunk_index": 0,
+    "text_snippet": "Dolor quidem adipisci consequatur rem a perferendis ipsam. Optio reiciendis eveniet fuga quis suscipit quasi. Quisquam cupiditate reprehenderit quis deserunt nobis. Ex quaerat doloribus maiores unde debitis nesciunt veritatis. Quam similique delectus accusantium. Similique cum dolorem placeat earum ab quas.",
+    "embedding_model": "text-embedding-3-small"
+  },
+  {
+    "doc_id": "8a8a07b7-0899-45ee-a386-e2f76525108f",
+    "source_type": "shipment",
+    "source_id": "c2551596-4e0a-4305-ac92-2585dfb8db25",
+    "region_id": "south",
+    "ts": "2025-10-21T23:19:18.240574",
+    "chunk_index": 0,
+    "text_snippet": "Consequuntur nulla corrupti nemo placeat quae. At reiciendis facere eveniet adipisci mollitia quo. Ratione dolorum aliquid eveniet. Accusantium amet placeat ipsum ut nemo. Possimus nesciunt repellat.",
+    "embedding_model": "text-embedding-3-small"
+  },
+  {
+    "doc_id": "09ed7b9f-7b7d-4ac1-9efa-8534a6194a65",
+    "source_type": "faq",
+    "source_id": "9005d029-5b5a-4def-9cf1-6901487f54d6",
+    "region_id": "south",
+    "ts": "2025-10-21T23:19:18.240689",
+    "chunk_index": 0,
+    "text_snippet": "Culpa quibusdam tenetur molestias a numquam accusamus. Rem soluta exercitationem quo enim deserunt quas. Voluptatibus esse nemo delectus enim deleniti eius.",
+    "embedding_model": "text-embedding-3-small"
+  },
+  {
+    "doc_id": "bd4f881b-2395-401c-aba5-9e77f5d99dd5",
+    "source_type": "order",
+    "source_id": "f39c2ef6-d09c-404c-b4fa-163ab3a44bd4",
+    "region_id": "east",
+    "ts": "2025-10-21T23:19:18.240747",
+    "chunk_index": 0,
+    "text_snippet": "Numquam natus quibusdam veniam facere. Explicabo necessitatibus sint natus nulla culpa inventore laudantium. Sunt quia esse debitis. Itaque omnis facere deleniti temporibus reiciendis rerum.",
+    "embedding_model": "text-embedding-3-small"
+  },
+  {
+    "doc_id": "17b885af-aba4-44cf-bb6f-2fa46156168b",
+    "source_type": "order",
+    "source_id": "d3f335dd-29e0-4229-b471-8be7af032a22",
+    "region_id": "south",
+    "ts": "2025-10-21T23:19:18.240824",
+    "chunk_index": 0,
+    "text_snippet": "Necessitatibus dolore earum qui fugit nihil illo fugit. Sit illum itaque illum. Quae excepturi animi veniam eum quis sequi. Quibusdam quaerat nulla aspernatur neque quisquam accusantium. Assumenda perspiciatis doloremque soluta at.",
+    "embedding_model": "text-embedding-3-small"
+  },
+  {
+    "doc_id": "4c17b544-81b5-482b-9df3-cfa3599c9fcd",
+    "source_type": "shipment",
+    "source_id": "8f55f4db-dcfb-4eb9-b976-249e5fb5fd6e",
+    "region_id": "west",
+    "ts": "2025-10-21T23:19:18.241261",
+    "chunk_index": 0,
+    "text_snippet": "Recusandae explicabo ullam alias. Odio necessitatibus cum eveniet quod quasi impedit. Asperiores laboriosam tempora voluptatem corrupti.",
+    "embedding_model": "text-embedding-3-small"
+  },
+  {
+    "doc_id": "154cd0be-37bf-48d4-a730-fcffb8f756a8",
+    "source_type": "order",
+    "source_id": "5fc2adbf-c0dc-4b4c-ace2-203eb1ed2be9",
+    "region_id": "north",
+    "ts": "2025-10-21T23:19:18.241438",
+    "chunk_index": 0,
+    "text_snippet": "Ratione molestias adipisci eligendi quis perspiciatis quo. Maxime eveniet ab optio voluptatum reprehenderit. Sit quidem eaque tenetur odit sit voluptates nobis. Nisi maiores cumque saepe corrupti error voluptatibus.",
+    "embedding_model": "text-embedding-3-small"
+  },
+  {
+    "doc_id": "34cf4800-6b5c-412d-a5ae-7e5b2b47a498",
+    "source_type": "policy",
+    "source_id": "90468182-e5e1-43e3-9631-4171df9829c6",
+    "region_id": "west",
+    "ts": "2025-10-21T23:19:18.241526",
+    "chunk_index": 0,
+    "text_snippet": "Ipsa occaecati rerum labore rerum. Molestias amet officia. Molestias deserunt voluptate deserunt molestias.",
+    "embedding_model": "text-embedding-3-small"
+  },
+  {
+    "doc_id": "f62a4b62-d505-452f-83be-a890ad899cc5",
+    "source_type": "shipment",
+    "source_id": "29312bd4-3f6b-40ba-adda-d9a3f8b1571d",
+    "region_id": "east",
+    "ts": "2025-10-21T23:19:18.241741",
+    "chunk_index": 0,
+    "text_snippet": "Inventore id debitis ratione sint eius. Delectus possimus ad possimus repellat. Sint odio eum vero porro.",
+    "embedding_model": "text-embedding-3-small"
+  }
+]

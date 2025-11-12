@@ -1,0 +1,2552 @@
+[
+  {
+    "customer_id": "a13e0944-4b19-4045-b552-b2649e597488",
+    "email": "issaconi@example.org",
+    "name": "Arunima Ahuja",
+    "phone": "6542351161",
+    "address": {
+      "line1": "H.No. 433, Chaudry Street",
+      "city": "Gudivada",
+      "state": "Maharashtra",
+      "postal_code": "013389",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.241482",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "6c455caa-56e6-47a7-abba-656d1550d91c",
+    "email": "kaulharrison@example.com",
+    "name": "Sudiksha Patla",
+    "phone": "5534192832",
+    "address": {
+      "line1": "H.No. 781\nBrar Marg",
+      "city": "Tadipatri",
+      "state": "West Bengal",
+      "postal_code": "931034",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.242016",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "beb4545f-1ebb-41e4-9f55-5d564aeda635",
+    "email": "yatinyohannan@example.com",
+    "name": "Mohini Pathak",
+    "phone": "2871012269",
+    "address": {
+      "line1": "50/305, Loyal Marg",
+      "city": "Rajpur Sonarpur",
+      "state": "Odisha",
+      "postal_code": "376724",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.242257",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "62a02e22-6de1-413b-a840-9afab2d59c61",
+    "email": "misrayashica@example.net",
+    "name": "Michael Prakash",
+    "phone": "8809570154",
+    "address": {
+      "line1": "48/01\nLoke Circle",
+      "city": "Gorakhpur",
+      "state": "Jharkhand",
+      "postal_code": "270482",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.242417",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "b2b778d6-1902-4306-874c-2de423b28a19",
+    "email": "mohini57@example.net",
+    "name": "Jai Kota",
+    "phone": "1509839301",
+    "address": {
+      "line1": "H.No. 718, Dave Street",
+      "city": "Jamalpur",
+      "state": "Goa",
+      "postal_code": "896383",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.242552",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "8f3dd710-2553-46dd-b50d-b6be652d1d68",
+    "email": "girindrachatterjee@example.net",
+    "name": "Irya Sampath",
+    "phone": "7010651333",
+    "address": {
+      "line1": "H.No. 18, Mallick Ganj",
+      "city": "Kakinada",
+      "state": "Nagaland",
+      "postal_code": "997376",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.242683",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "e2772ba5-f38d-4b4d-a244-0265c04ab9f6",
+    "email": "nandinibhargava@example.org",
+    "name": "Aarnav Ramakrishnan",
+    "phone": "7468723430",
+    "address": {
+      "line1": "473\nSavant Zila",
+      "city": "Dhanbad",
+      "state": "Rajasthan",
+      "postal_code": "132677",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.242819",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "1c2e0f7b-eafe-46cd-8f79-7d1e86af5d98",
+    "email": "koshybalveer@example.net",
+    "name": "Oni Virk",
+    "phone": "4353462475",
+    "address": {
+      "line1": "H.No. 097\nWali Circle",
+      "city": "Howrah",
+      "state": "Mizoram",
+      "postal_code": "219136",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.242960",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "0ea2820a-0e64-4702-a39f-6f4b243b3cbd",
+    "email": "mistryhemang@example.org",
+    "name": "Jack Chhabra",
+    "phone": "4493534874",
+    "address": {
+      "line1": "H.No. 838, Deo Road",
+      "city": "Coimbatore",
+      "state": "Haryana",
+      "postal_code": "427849",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.243327",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "ee728410-ed96-49af-af12-7dea39cc4428",
+    "email": "pinglemanbir@example.com",
+    "name": "Benjamin Morar",
+    "phone": "0533158692",
+    "address": {
+      "line1": "H.No. 052\nEdwin Road",
+      "city": "Suryapet",
+      "state": "Tamil Nadu",
+      "postal_code": "801128",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.243543",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "958d920c-ea56-4ebb-bdc2-d888f0ab33d5",
+    "email": "udantbajwa@example.net",
+    "name": "Mohini Narasimhan",
+    "phone": "1458685014",
+    "address": {
+      "line1": "H.No. 256\nLoke Ganj",
+      "city": "Moradabad",
+      "state": "Madhya Pradesh",
+      "postal_code": "733754",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.243682",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "8b70db25-c209-41d7-a08c-1b9c9e47799c",
+    "email": "janujasankar@example.org",
+    "name": "Dipta Dash",
+    "phone": "8465648236",
+    "address": {
+      "line1": "H.No. 965, Sarin Path",
+      "city": "Kharagpur",
+      "state": "Odisha",
+      "postal_code": "406088",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.243814",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "abc085db-3493-411d-b48c-d9767832fc53",
+    "email": "fradomander@example.net",
+    "name": "Girik Keer",
+    "phone": "3320037917",
+    "address": {
+      "line1": "80\nMangat Road",
+      "city": "Chinsurah",
+      "state": "Uttar Pradesh",
+      "postal_code": "777387",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.243943",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "67b355ed-2d3e-4647-a35f-ae19d773eeee",
+    "email": "zdeol@example.com",
+    "name": "Saanvi Thaman",
+    "phone": "8727743487",
+    "address": {
+      "line1": "63\nAhluwalia Street",
+      "city": "Khandwa",
+      "state": "Haryana",
+      "postal_code": "870831",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.244066",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "ac83420b-efa9-4867-a788-bf6a64cfdae6",
+    "email": "dsagar@example.org",
+    "name": "Lopa Bahri",
+    "phone": "7054668893",
+    "address": {
+      "line1": "43/455, Buch Circle",
+      "city": "Saharanpur",
+      "state": "Haryana",
+      "postal_code": "231665",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.244192",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "6d6757bf-ab33-4737-8e0a-3aa411850b57",
+    "email": "triyagopal@example.org",
+    "name": "Ladli Narang",
+    "phone": "7556464170",
+    "address": {
+      "line1": "06\nRavel Path",
+      "city": "Bhind",
+      "state": "Chhattisgarh",
+      "postal_code": "699016",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.244311",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "054c351a-6a95-43c6-8bf1-1c7bec290beb",
+    "email": "gadedeepa@example.org",
+    "name": "Devika Prashad",
+    "phone": "3193149190",
+    "address": {
+      "line1": "10/033, Dua Nagar",
+      "city": "Cuttack",
+      "state": "Meghalaya",
+      "postal_code": "937452",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.244433",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "9af563c0-ed58-4f89-b15d-2f17b231b574",
+    "email": "bshroff@example.net",
+    "name": "Ekantika Korpal",
+    "phone": "4737996507",
+    "address": {
+      "line1": "H.No. 850\nSuri Marg",
+      "city": "Bhiwani",
+      "state": "Kerala",
+      "postal_code": "262849",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.244557",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "b40adf06-0e48-4910-a943-724c1812eeac",
+    "email": "ysem@example.org",
+    "name": "Chaitaly Kant",
+    "phone": "3495788568",
+    "address": {
+      "line1": "H.No. 45, Majumdar Road",
+      "city": "Hazaribagh",
+      "state": "Gujarat",
+      "postal_code": "367837",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.244692",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "86eee39d-ec98-4206-8a27-6538dbb3d352",
+    "email": "harish34@example.org",
+    "name": "Praneel Mittal",
+    "phone": "8240084271",
+    "address": {
+      "line1": "H.No. 43\nHans Zila",
+      "city": "Jamshedpur",
+      "state": "Telangana",
+      "postal_code": "337498",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.244811",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "543270ee-c285-431f-b8b7-b87aebeee05a",
+    "email": "dakshachada@example.org",
+    "name": "Omaja Kara",
+    "phone": "7749649909",
+    "address": {
+      "line1": "75\nBehl Street",
+      "city": "Morena",
+      "state": "Bihar",
+      "postal_code": "671902",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.244927",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "70ee4695-192c-49ab-8eb7-63dd109ec966",
+    "email": "kauraishani@example.net",
+    "name": "Pavani Contractor",
+    "phone": "2421024994",
+    "address": {
+      "line1": "12/328\nDugar Zila",
+      "city": "Alappuzha",
+      "state": "Manipur",
+      "postal_code": "403447",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.245049",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "e619b50e-4a3c-4b57-83de-b6f463e7356a",
+    "email": "luthrabanjeet@example.org",
+    "name": "Zilmil Sathe",
+    "phone": "2967175655",
+    "address": {
+      "line1": "64/887\nBuch Chowk",
+      "city": "Bhiwani",
+      "state": "Telangana",
+      "postal_code": "940139",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.245166",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "aed21d4b-58e4-4385-8ee5-a078fe757429",
+    "email": "guhazarna@example.com",
+    "name": "Riya Behl",
+    "phone": "4824771093",
+    "address": {
+      "line1": "74/680\nChakrabarti Chowk",
+      "city": "Nizamabad",
+      "state": "Karnataka",
+      "postal_code": "680876",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.245278",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "e2a3de3e-34e9-4764-88d5-1441151cd950",
+    "email": "ydhillon@example.org",
+    "name": "Ekaraj Majumdar",
+    "phone": "5840449972",
+    "address": {
+      "line1": "61/31, Dalal Chowk",
+      "city": "Panchkula",
+      "state": "Tamil Nadu",
+      "postal_code": "846773",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.245384",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "acb4459e-cd05-4490-a657-dc6634884d13",
+    "email": "yraj@example.net",
+    "name": "Warhi Bansal",
+    "phone": "8951718702",
+    "address": {
+      "line1": "H.No. 88\nShah Marg",
+      "city": "Maheshtala",
+      "state": "Tamil Nadu",
+      "postal_code": "963605",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.245496",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "6483bf25-43c2-47e8-9d13-82f7a97bda7d",
+    "email": "utkarsh16@example.org",
+    "name": "Sachi Ganesan",
+    "phone": "0050455623",
+    "address": {
+      "line1": "H.No. 59\nBuch Marg",
+      "city": "Deoghar",
+      "state": "Madhya Pradesh",
+      "postal_code": "780913",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.245665",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "74446c00-80f2-4476-b239-14eaf694e977",
+    "email": "nakul17@example.com",
+    "name": "Panini Krishna",
+    "phone": "4367136959",
+    "address": {
+      "line1": "219, Khosla Marg",
+      "city": "Ballia",
+      "state": "Chhattisgarh",
+      "postal_code": "747407",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.245826",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "a1b43f49-03b0-4fbf-a334-95622fb1cf25",
+    "email": "moreridhi@example.org",
+    "name": "Karan Chana",
+    "phone": "5623285884",
+    "address": {
+      "line1": "H.No. 09\nTaneja Nagar",
+      "city": "Berhampur",
+      "state": "Punjab",
+      "postal_code": "339421",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.245983",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "fc28f85c-030a-4a27-af2b-c142acb30161",
+    "email": "lakshmi51@example.net",
+    "name": "Urishilla Bakshi",
+    "phone": "9317461200",
+    "address": {
+      "line1": "51/712\nRanganathan Ganj",
+      "city": "Mysore",
+      "state": "Uttar Pradesh",
+      "postal_code": "048175",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.246193",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "d206f918-c764-41ca-a17f-60b1c06ee4ed",
+    "email": "prabhakarteerth@example.com",
+    "name": "Warinder Patil",
+    "phone": "5850643171",
+    "address": {
+      "line1": "826, Prabhakar Chowk",
+      "city": "Dharmavaram",
+      "state": "Telangana",
+      "postal_code": "617964",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.246830",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "69a7cd33-c817-471b-849b-12d6b6a3ddc4",
+    "email": "kalpitzachariah@example.com",
+    "name": "Imaran Bal",
+    "phone": "0539502402",
+    "address": {
+      "line1": "H.No. 32, Jha",
+      "city": "Begusarai",
+      "state": "Gujarat",
+      "postal_code": "352904",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.248333",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "5478af13-208a-42b7-950c-a121f6e5e678",
+    "email": "rsandhu@example.org",
+    "name": "Sachi Borah",
+    "phone": "5921249985",
+    "address": {
+      "line1": "75, Chopra Circle",
+      "city": "Ambala",
+      "state": "Haryana",
+      "postal_code": "847007",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.248525",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "41d3159f-70e5-4ed2-80b6-c2aca0709155",
+    "email": "usagar@example.org",
+    "name": "Prisha Munshi",
+    "phone": "5271111615",
+    "address": {
+      "line1": "89\nChaudhary Marg",
+      "city": "Suryapet",
+      "state": "Telangana",
+      "postal_code": "673657",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.248666",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "3f1fc0d5-9819-4060-b1f1-f2c203ed730f",
+    "email": "ishwar49@example.org",
+    "name": "Atharv Loke",
+    "phone": "2445502296",
+    "address": {
+      "line1": "16/560\nMuni Road",
+      "city": "Vasai-Virar",
+      "state": "Odisha",
+      "postal_code": "273158",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.248801",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "06b1ca5e-6db0-4b5e-96b4-d71e258c312f",
+    "email": "bumbanita@example.com",
+    "name": "Vedika Sathe",
+    "phone": "4381561497",
+    "address": {
+      "line1": "83/667, Dugar Path",
+      "city": "Bijapur",
+      "state": "Telangana",
+      "postal_code": "991022",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.248927",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "83ccc537-b82c-46ae-9a1c-3556562ff40e",
+    "email": "igill@example.com",
+    "name": "Xiti Pandya",
+    "phone": "6060715969",
+    "address": {
+      "line1": "90, Jayaraman Nagar",
+      "city": "Rajpur Sonarpur",
+      "state": "Tripura",
+      "postal_code": "445107",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.249058",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "3bd5bec8-914f-41a6-81d0-8f35ebf2c295",
+    "email": "vmukherjee@example.com",
+    "name": "Gauri Ganguly",
+    "phone": "8188355231",
+    "address": {
+      "line1": "05, Sharma Street",
+      "city": "Hubli–Dharwad",
+      "state": "Maharashtra",
+      "postal_code": "369681",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.249191",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "a665afad-b56d-4818-b1b9-5b3e04475c4b",
+    "email": "pandeyyashica@example.org",
+    "name": "Triya Seth",
+    "phone": "0541199867",
+    "address": {
+      "line1": "21/27, Sen Chowk",
+      "city": "Satna",
+      "state": "Chhattisgarh",
+      "postal_code": "177449",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.249312",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "5717a2ae-0a60-498b-a636-131948598361",
+    "email": "hviswanathan@example.net",
+    "name": "Januja Pradhan",
+    "phone": "6659051518",
+    "address": {
+      "line1": "35/97\nDora Circle",
+      "city": "Hospet",
+      "state": "Bihar",
+      "postal_code": "182037",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.249428",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "8831b119-b5c7-49d5-b522-feb926f65840",
+    "email": "sampathyashoda@example.com",
+    "name": "Janani More",
+    "phone": "3573322141",
+    "address": {
+      "line1": "H.No. 19, Palla Street",
+      "city": "Katni",
+      "state": "Chhattisgarh",
+      "postal_code": "486528",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.249544",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "48482bd5-3263-4d93-b41d-1887dc1b0fa4",
+    "email": "saumya38@example.org",
+    "name": "Upasna Hari",
+    "phone": "9774688623",
+    "address": {
+      "line1": "59/296, Gaba Street",
+      "city": "Dehradun",
+      "state": "Telangana",
+      "postal_code": "065379",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.249657",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "fd855f77-7bef-4d1b-bb37-d5f517782eef",
+    "email": "avi60@example.com",
+    "name": "Warinder Raju",
+    "phone": "5305152204",
+    "address": {
+      "line1": "75/818, Mane Zila",
+      "city": "Nanded",
+      "state": "Himachal Pradesh",
+      "postal_code": "826137",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.249773",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "cd8ade9d-a4a4-4d95-aed7-c4cd44ed7dd7",
+    "email": "hbhatnagar@example.com",
+    "name": "Yutika Khurana",
+    "phone": "4609539621",
+    "address": {
+      "line1": "01/04\nDoctor Ganj",
+      "city": "Bhubaneswar",
+      "state": "Tripura",
+      "postal_code": "341036",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.249884",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "78efdb6c-532b-43fc-946f-8bbacb4a95f8",
+    "email": "pandeyhamsini@example.net",
+    "name": "Ucchal Srinivas",
+    "phone": "2170430305",
+    "address": {
+      "line1": "70, Prakash Marg",
+      "city": "Pune",
+      "state": "Kerala",
+      "postal_code": "531952",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.249998",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "40f52c6a-f64f-469a-89f2-2d89216888f7",
+    "email": "watikatank@example.com",
+    "name": "Fitan Samra",
+    "phone": "6928451154",
+    "address": {
+      "line1": "H.No. 03\nParikh Road",
+      "city": "Bathinda",
+      "state": "Himachal Pradesh",
+      "postal_code": "566765",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.250109",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "a54baf55-78a8-4092-aa3d-702e29e8bd04",
+    "email": "rakshabanerjee@example.org",
+    "name": "Warinder Peri",
+    "phone": "6909275571",
+    "address": {
+      "line1": "757\nPandit Nagar",
+      "city": "Panipat",
+      "state": "Rajasthan",
+      "postal_code": "165820",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.250226",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "f5dc437a-1db1-4766-921a-efa5656e0f42",
+    "email": "vritti31@example.org",
+    "name": "Siya Gera",
+    "phone": "1551884422",
+    "address": {
+      "line1": "54\nComar Ganj",
+      "city": "Gaya",
+      "state": "Meghalaya",
+      "postal_code": "814473",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.250361",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "17bc825e-b3e7-483f-8344-9977ab24a544",
+    "email": "krout@example.org",
+    "name": "Edhitha Borah",
+    "phone": "7852892268",
+    "address": {
+      "line1": "237, Patel Nagar",
+      "city": "Bhind",
+      "state": "Uttar Pradesh",
+      "postal_code": "911467",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.250475",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "8d66adc4-abd7-4d26-8677-4572e3639d65",
+    "email": "thakkarom@example.net",
+    "name": "Onveer Nazareth",
+    "phone": "0109439690",
+    "address": {
+      "line1": "H.No. 22, Kar Path",
+      "city": "Kadapa",
+      "state": "Jharkhand",
+      "postal_code": "438424",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.250592",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "e9cf674a-c11a-4d52-901b-af127eeb3d8f",
+    "email": "dhritinagar@example.net",
+    "name": "Mohini De",
+    "phone": "8815371473",
+    "address": {
+      "line1": "36\nSetty Road",
+      "city": "Allahabad",
+      "state": "Goa",
+      "postal_code": "677359",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.250702",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "68697306-14ad-485d-8c3e-4a1db00454bd",
+    "email": "widisha01@example.com",
+    "name": "Wridesh Kale",
+    "phone": "0047974801",
+    "address": {
+      "line1": "96\nDutta Ganj",
+      "city": "Gangtok",
+      "state": "Telangana",
+      "postal_code": "327877",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.250807",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "80887e12-bfe5-40f1-b406-2df62b637dc5",
+    "email": "davegunbir@example.com",
+    "name": "Harinakshi Pau",
+    "phone": "3986800025",
+    "address": {
+      "line1": "50\nBehl Marg",
+      "city": "Mirzapur",
+      "state": "Nagaland",
+      "postal_code": "168784",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.250920",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "1c972b3d-1829-4f29-a4a3-c027bfc3976c",
+    "email": "vaishnavi05@example.com",
+    "name": "Omaja Morar",
+    "phone": "9749930972",
+    "address": {
+      "line1": "82/59, Gaba Path",
+      "city": "Tadepalligudem",
+      "state": "Telangana",
+      "postal_code": "958887",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.251034",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "951b02ac-9ae9-4a35-abf1-63472cfe919e",
+    "email": "zilmiljohal@example.net",
+    "name": "Vanya Vora",
+    "phone": "5278585497",
+    "address": {
+      "line1": "30/913, Sastry Nagar",
+      "city": "Gurgaon",
+      "state": "Chhattisgarh",
+      "postal_code": "368970",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.251146",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "ea08082f-9055-435a-8ce0-edab0aaab3cd",
+    "email": "madhav40@example.com",
+    "name": "Hiral Sathe",
+    "phone": "7338484219",
+    "address": {
+      "line1": "443\nNadig Chowk",
+      "city": "Karnal",
+      "state": "Nagaland",
+      "postal_code": "419866",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.251252",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "c489f6ed-a7f8-40e3-8dce-429a2d4a151c",
+    "email": "bhavnanagi@example.com",
+    "name": "Gaurav Kata",
+    "phone": "2620672400",
+    "address": {
+      "line1": "83/301, Narayanan Marg",
+      "city": "Salem",
+      "state": "Sikkim",
+      "postal_code": "082677",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.251428",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "5c71e669-e07e-40c9-82da-e501f333f605",
+    "email": "quincy05@example.com",
+    "name": "Parth Ravi",
+    "phone": "8516122753",
+    "address": {
+      "line1": "H.No. 47, Viswanathan Circle",
+      "city": "Guntur",
+      "state": "West Bengal",
+      "postal_code": "431527",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.251561",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "0a6240c9-7689-496b-bb49-3df9f57b4f18",
+    "email": "jacob45@example.net",
+    "name": "Theodore Deol",
+    "phone": "2795687833",
+    "address": {
+      "line1": "45, Apte Road",
+      "city": "Karimnagar",
+      "state": "Tamil Nadu",
+      "postal_code": "017426",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.251671",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "dc6f6fa3-4cd3-43ed-8171-4de5ec16f538",
+    "email": "gchand@example.com",
+    "name": "Sudiksha Deo",
+    "phone": "7908740640",
+    "address": {
+      "line1": "51/91\nTiwari Nagar",
+      "city": "Chapra",
+      "state": "Nagaland",
+      "postal_code": "258713",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.251780",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "8d63a3a9-d42d-48e5-a9cf-7027595b562d",
+    "email": "ypurohit@example.org",
+    "name": "Ijaya Dani",
+    "phone": "8682300478",
+    "address": {
+      "line1": "51, Bhasin Circle",
+      "city": "Chittoor",
+      "state": "Arunachal Pradesh",
+      "postal_code": "622656",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.251887",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "7ab7707f-9aba-47b3-9565-a884aafc27ec",
+    "email": "sekhonchanakya@example.org",
+    "name": "Neelima Sarna",
+    "phone": "8302843959",
+    "address": {
+      "line1": "752, Gulati Road",
+      "city": "Patna",
+      "state": "Uttar Pradesh",
+      "postal_code": "903311",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.251998",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "9e58bebd-457b-4bae-9bd9-3b192f19efea",
+    "email": "omaja62@example.com",
+    "name": "Qarin Yogi",
+    "phone": "3342708668",
+    "address": {
+      "line1": "836\nMaharaj Road",
+      "city": "Proddatur",
+      "state": "Odisha",
+      "postal_code": "687056",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.252112",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "4cba0fa2-a704-4750-acc0-c77dd808c7bc",
+    "email": "guhateerth@example.com",
+    "name": "Gaurangi Mitter",
+    "phone": "3317393638",
+    "address": {
+      "line1": "H.No. 35, Sengupta Zila",
+      "city": "Tiruchirappalli",
+      "state": "Nagaland",
+      "postal_code": "046990",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.252229",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "d099bc4b-1467-48a4-9eaa-581573434246",
+    "email": "madhavbabu@example.com",
+    "name": "Chakrika Dua",
+    "phone": "5369378547",
+    "address": {
+      "line1": "54/45\nTank Circle",
+      "city": "Navi Mumbai",
+      "state": "Uttar Pradesh",
+      "postal_code": "535560",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.252366",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "bbf5e870-fc6c-4aa4-807b-53639a3a465c",
+    "email": "kamdaryashasvi@example.com",
+    "name": "Darpan Subramanian",
+    "phone": "0088600848",
+    "address": {
+      "line1": "287\nBhargava Street",
+      "city": "Aurangabad",
+      "state": "Uttarakhand",
+      "postal_code": "062312",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.252564",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "53c21005-4e72-4c71-b300-a7184e1a8b3f",
+    "email": "skohli@example.org",
+    "name": "Faris Balay",
+    "phone": "6668700217",
+    "address": {
+      "line1": "118\nKhosla Street",
+      "city": "Udupi",
+      "state": "Mizoram",
+      "postal_code": "546156",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.252764",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "176bb4e1-4542-4abf-9adb-0a03ccddc0db",
+    "email": "maanasrao@example.org",
+    "name": "Nicholas Khosla",
+    "phone": "8562185016",
+    "address": {
+      "line1": "03/39, Madan Chowk",
+      "city": "Aurangabad",
+      "state": "Sikkim",
+      "postal_code": "890250",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.252939",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "af24be64-5f6b-4754-9cd9-efed3c249138",
+    "email": "yatin11@example.com",
+    "name": "Lajita Dube",
+    "phone": "5511047541",
+    "address": {
+      "line1": "H.No. 04\nSwaminathan Chowk",
+      "city": "Raurkela Industrial Township",
+      "state": "Nagaland",
+      "postal_code": "629619",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.253181",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "761fb1ea-712b-41ff-88ff-b4b587d6e8a2",
+    "email": "manneodika@example.com",
+    "name": "Xavier Verma",
+    "phone": "6224447212",
+    "address": {
+      "line1": "88\nReddy Circle",
+      "city": "Indore",
+      "state": "Assam",
+      "postal_code": "819956",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.253425",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "5a15af49-5eaf-4f05-9f68-a26482004b8e",
+    "email": "lajita57@example.com",
+    "name": "Laban Mital",
+    "phone": "9375265479",
+    "address": {
+      "line1": "15\nKoshy Road",
+      "city": "Hindupur",
+      "state": "Punjab",
+      "postal_code": "712406",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.253562",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "33314f9f-0993-4a7e-9edc-154978baf148",
+    "email": "chavvikhurana@example.com",
+    "name": "Pallavi Purohit",
+    "phone": "7979688680",
+    "address": {
+      "line1": "51\nIyengar",
+      "city": "Jamalpur",
+      "state": "Andhra Pradesh",
+      "postal_code": "374167",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.253686",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "471faccd-9837-492f-89f9-b1ad9eee4022",
+    "email": "sanayaprasad@example.com",
+    "name": "Xiti Dora",
+    "phone": "0714611254",
+    "address": {
+      "line1": "H.No. 352, Basu",
+      "city": "Bathinda",
+      "state": "Uttar Pradesh",
+      "postal_code": "101438",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.253801",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "abe88a4d-006c-46af-8c97-8b5da803a0ec",
+    "email": "nathanielnarayanan@example.net",
+    "name": "Turvi Kata",
+    "phone": "2266093796",
+    "address": {
+      "line1": "H.No. 71\nSethi Chowk",
+      "city": "Jabalpur",
+      "state": "Jharkhand",
+      "postal_code": "105123",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.253914",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "1902f313-43a6-4359-9d95-599f84561546",
+    "email": "lramanathan@example.org",
+    "name": "Indira Shankar",
+    "phone": "4991251341",
+    "address": {
+      "line1": "H.No. 19, Yadav Zila",
+      "city": "Ambarnath",
+      "state": "Karnataka",
+      "postal_code": "714785",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.254107",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "122f2187-622c-4249-adda-794d06741ddf",
+    "email": "shravya90@example.com",
+    "name": "Vedhika Deshpande",
+    "phone": "6887676772",
+    "address": {
+      "line1": "92\nRajagopal",
+      "city": "Gaya",
+      "state": "Meghalaya",
+      "postal_code": "827422",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.254242",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "d1d4a8a1-856c-4af5-b3d1-b0edfd0ac8ff",
+    "email": "loyaljeevika@example.net",
+    "name": "Ridhi Kamdar",
+    "phone": "1340745171",
+    "address": {
+      "line1": "H.No. 04, Yogi Ganj",
+      "city": "Gulbarga",
+      "state": "Tripura",
+      "postal_code": "978819",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.254372",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "dc86fce4-dae4-4fd8-a68b-60ff73a023b1",
+    "email": "yoshita12@example.com",
+    "name": "Aradhana Date",
+    "phone": "3253672946",
+    "address": {
+      "line1": "96/292\nJhaveri Ganj",
+      "city": "Jehanabad",
+      "state": "Kerala",
+      "postal_code": "982544",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.254490",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "cb6e707c-b042-43bf-a09f-7584cd0acf93",
+    "email": "pushtikakar@example.com",
+    "name": "Ekantika Mander",
+    "phone": "8929750017",
+    "address": {
+      "line1": "84, Sha Path",
+      "city": "Khammam",
+      "state": "Odisha",
+      "postal_code": "175186",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.254605",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "17458638-3deb-4fb7-ba9e-5b747b928467",
+    "email": "randhawadalaja@example.net",
+    "name": "Pushti Chand",
+    "phone": "0371293870",
+    "address": {
+      "line1": "06\nDeo Ganj",
+      "city": "Kozhikode",
+      "state": "West Bengal",
+      "postal_code": "154152",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.254721",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "96b28c61-0af3-4aa2-a1a6-d7c3854e094d",
+    "email": "galaria@example.com",
+    "name": "Max Sabharwal",
+    "phone": "3112196565",
+    "address": {
+      "line1": "27/136\nChaudry Zila",
+      "city": "Satara",
+      "state": "Kerala",
+      "postal_code": "262218",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.254850",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "d36aaf55-12ef-40fa-b368-8b3e354069bc",
+    "email": "khoslaxalak@example.net",
+    "name": "Advik Patel",
+    "phone": "2696582710",
+    "address": {
+      "line1": "899, Mane",
+      "city": "Barasat",
+      "state": "Gujarat",
+      "postal_code": "640376",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.254983",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "86995f3b-e618-460a-9d10-3bd07ab2d60e",
+    "email": "mukherjeefarhan@example.net",
+    "name": "Nachiket Yadav",
+    "phone": "6914630316",
+    "address": {
+      "line1": "006\nMangat Circle",
+      "city": "Bhusawal",
+      "state": "Tamil Nadu",
+      "postal_code": "188924",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.255124",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "9337ae45-2f8d-4d6f-82d8-689c9afcb19a",
+    "email": "jacob05@example.com",
+    "name": "Devansh Lall",
+    "phone": "7785079252",
+    "address": {
+      "line1": "H.No. 21, Devan Nagar",
+      "city": "Ujjain",
+      "state": "Meghalaya",
+      "postal_code": "884252",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.255262",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "6fcc10d4-9eaf-4bd9-8bd8-2267e9a1a039",
+    "email": "yuvraj65@example.com",
+    "name": "Kashish Dar",
+    "phone": "2380617445",
+    "address": {
+      "line1": "800, Konda Nagar",
+      "city": "Chittoor",
+      "state": "Kerala",
+      "postal_code": "220863",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.255941",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "197e8a05-14b0-434c-8f41-5f00c64f1329",
+    "email": "kaulhiral@example.net",
+    "name": "Gautami Agarwal",
+    "phone": "4138367024",
+    "address": {
+      "line1": "H.No. 34, Modi",
+      "city": "Madhyamgram",
+      "state": "Kerala",
+      "postal_code": "383206",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.256214",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "8d997714-e457-4d62-b89f-320f19b1443f",
+    "email": "unarain@example.com",
+    "name": "Vivaan Borde",
+    "phone": "2912127756",
+    "address": {
+      "line1": "57/191\nDeol Circle",
+      "city": "Aurangabad",
+      "state": "Odisha",
+      "postal_code": "623445",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.256408",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "0a7072b8-4bf7-4e0f-b11a-1f3958e8a355",
+    "email": "ishanirandhawa@example.net",
+    "name": "Chandani Lad",
+    "phone": "0678831712",
+    "address": {
+      "line1": "47, Dar Road",
+      "city": "Sangli-Miraj & Kupwad",
+      "state": "Uttar Pradesh",
+      "postal_code": "903521",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.256607",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "5aef3689-4ff6-4027-86b9-5fdc02014185",
+    "email": "kbedi@example.net",
+    "name": "Megha Taneja",
+    "phone": "6625324472",
+    "address": {
+      "line1": "365, Lad Zila",
+      "city": "Lucknow",
+      "state": "Assam",
+      "postal_code": "721510",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.257369",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "07f15969-f48a-40a2-982f-9da25579cbc3",
+    "email": "varsha87@example.com",
+    "name": "Lipika Madan",
+    "phone": "0593040785",
+    "address": {
+      "line1": "47/687, Chahal Nagar",
+      "city": "Yamunanagar",
+      "state": "Chhattisgarh",
+      "postal_code": "383806",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.257572",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "376f77cf-c308-4971-850c-3a9993922402",
+    "email": "pandeylucky@example.net",
+    "name": "Waida More",
+    "phone": "7010393087",
+    "address": {
+      "line1": "348, Kanda Nagar",
+      "city": "Raichur",
+      "state": "Uttarakhand",
+      "postal_code": "239559",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.258515",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "9aae65b2-a96e-4820-ad89-b2def4dbbd88",
+    "email": "nayarchasmum@example.com",
+    "name": "Nakul Sarkar",
+    "phone": "5289539264",
+    "address": {
+      "line1": "525, Bains Nagar",
+      "city": "Dharmavaram",
+      "state": "Tamil Nadu",
+      "postal_code": "185156",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.259472",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "0ade0e9e-323e-4e55-86cc-d8d48beaa276",
+    "email": "gaurangnayak@example.com",
+    "name": "Alka Kadakia",
+    "phone": "1541006762",
+    "address": {
+      "line1": "96/902, Nadkarni",
+      "city": "Buxar",
+      "state": "Bihar",
+      "postal_code": "251355",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.259696",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "bab96650-f0c0-403b-a053-f5761e43f81e",
+    "email": "onkar62@example.net",
+    "name": "Girik Nigam",
+    "phone": "0629620153",
+    "address": {
+      "line1": "61/79\nGaba Ganj",
+      "city": "Srinagar",
+      "state": "Uttar Pradesh",
+      "postal_code": "405411",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.259838",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "8ff467ce-2ffe-4eac-8f61-a8a91ce983b7",
+    "email": "balsamuel@example.org",
+    "name": "Finn Solanki",
+    "phone": "4677418625",
+    "address": {
+      "line1": "44/310\nSwaminathan Marg",
+      "city": "Meerut",
+      "state": "Kerala",
+      "postal_code": "614973",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.259966",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "af0f4047-a182-4327-8502-318ab3428649",
+    "email": "darshram@example.net",
+    "name": "Vaishnavi Keer",
+    "phone": "4160898992",
+    "address": {
+      "line1": "H.No. 477\nKara Road",
+      "city": "Phusro",
+      "state": "Arunachal Pradesh",
+      "postal_code": "115869",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.260087",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "44345f44-a139-4dba-a858-ce5c53daf3d7",
+    "email": "rnanda@example.net",
+    "name": "Advik Virk",
+    "phone": "1622999119",
+    "address": {
+      "line1": "320, Brar Marg",
+      "city": "Panihati",
+      "state": "Uttarakhand",
+      "postal_code": "945116",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.260209",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "97983de8-0326-45fb-968c-20ed6777726d",
+    "email": "wazir07@example.com",
+    "name": "Anmol Nazareth",
+    "phone": "4471324754",
+    "address": {
+      "line1": "46\nSolanki Chowk",
+      "city": "Malegaon",
+      "state": "Himachal Pradesh",
+      "postal_code": "299606",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.260329",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "cc8047fb-c0ee-417c-b290-3fb82574981f",
+    "email": "ghosereyansh@example.org",
+    "name": "Zaid Bali",
+    "phone": "0534578610",
+    "address": {
+      "line1": "36, Varty Chowk",
+      "city": "Pimpri-Chinchwad",
+      "state": "Mizoram",
+      "postal_code": "148628",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.260450",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "03310ba5-7f24-41eb-af8b-5bbf002f6280",
+    "email": "timothykar@example.net",
+    "name": "Amruta Rout",
+    "phone": "0722903494",
+    "address": {
+      "line1": "798\nPadmanabhan Path",
+      "city": "Rampur",
+      "state": "Telangana",
+      "postal_code": "406029",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.260569",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "e5a01234-3e8d-493a-b024-614fcbb2d46a",
+    "email": "hritik71@example.com",
+    "name": "Ekta Malhotra",
+    "phone": "4328309652",
+    "address": {
+      "line1": "43\nMittal Chowk",
+      "city": "Bhimavaram",
+      "state": "Bihar",
+      "postal_code": "858994",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.260692",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "2eb48353-fe09-4e7d-a830-03f8e4acef38",
+    "email": "gunbir72@example.net",
+    "name": "Qadim Nayak",
+    "phone": "3534655494",
+    "address": {
+      "line1": "66\nGupta Nagar",
+      "city": "Korba",
+      "state": "Sikkim",
+      "postal_code": "584282",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.260830",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "75d1e7d3-247f-4f1b-81d2-1cb2db469af0",
+    "email": "jshankar@example.com",
+    "name": "Faris Sura",
+    "phone": "2500743292",
+    "address": {
+      "line1": "99/917, Tella Ganj",
+      "city": "Eluru",
+      "state": "Mizoram",
+      "postal_code": "602235",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.260941",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "06e38b9d-5c36-4468-9be4-87d277438696",
+    "email": "devika21@example.com",
+    "name": "Oliver Bhattacharyya",
+    "phone": "4478985625",
+    "address": {
+      "line1": "66/676\nBarad Nagar",
+      "city": "Dindigul",
+      "state": "Andhra Pradesh",
+      "postal_code": "830033",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.261053",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "54ddde3e-bde6-4483-bbd7-cfb8f5c8f273",
+    "email": "bavahritik@example.net",
+    "name": "Chanakya D’Alia",
+    "phone": "7618472304",
+    "address": {
+      "line1": "03, Deep Ganj",
+      "city": "Lucknow",
+      "state": "Odisha",
+      "postal_code": "150648",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.261166",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "c47a84a3-be43-406c-ab02-ebab779d6f37",
+    "email": "ishitarout@example.com",
+    "name": "Balveer Taneja",
+    "phone": "7530011972",
+    "address": {
+      "line1": "92/61\nDalal Circle",
+      "city": "Raipur",
+      "state": "Uttar Pradesh",
+      "postal_code": "739348",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.261290",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "d5476a37-5d93-4331-a49c-a6b8b063a508",
+    "email": "bathaditya@example.org",
+    "name": "Falguni Parmar",
+    "phone": "9415521667",
+    "address": {
+      "line1": "H.No. 37, Lalla Road",
+      "city": "Dhanbad",
+      "state": "Bihar",
+      "postal_code": "045561",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.261403",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "de1d379d-dc95-435e-89b5-21ab851284d6",
+    "email": "vasudhasura@example.org",
+    "name": "Ridhi Batra",
+    "phone": "4508993588",
+    "address": {
+      "line1": "21/202\nSaha Zila",
+      "city": "Jehanabad",
+      "state": "Sikkim",
+      "postal_code": "296590",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.261525",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "3786c167-27dd-4a95-a51c-7a8a68a52a26",
+    "email": "arunima08@example.org",
+    "name": "Neha Keer",
+    "phone": "7797177517",
+    "address": {
+      "line1": "56, Bhagat Street",
+      "city": "Sangli-Miraj & Kupwad",
+      "state": "Mizoram",
+      "postal_code": "721753",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.261641",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "c4402ef4-7ad0-4c45-a402-ce6248ee317a",
+    "email": "tpatla@example.com",
+    "name": "Gunbir Kapadia",
+    "phone": "5548851027",
+    "address": {
+      "line1": "H.No. 880\nModi Zila",
+      "city": "Sirsa",
+      "state": "Karnataka",
+      "postal_code": "037589",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.261756",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "46865242-21db-4c13-b5c2-2bf31fa84aa1",
+    "email": "wishiagrawal@example.net",
+    "name": "Rachita Subramanian",
+    "phone": "9221699586",
+    "address": {
+      "line1": "33/16\nShankar Ganj",
+      "city": "Sonipat",
+      "state": "Bihar",
+      "postal_code": "091779",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.261866",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "67f590c4-37fa-4acf-b877-c06dc6657828",
+    "email": "hemani22@example.net",
+    "name": "Jack Pandey",
+    "phone": "9968460810",
+    "address": {
+      "line1": "54\nDeol Chowk",
+      "city": "Haridwar",
+      "state": "Punjab",
+      "postal_code": "858333",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.261971",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "9a1ee2db-6643-4c56-a55d-d195b0371f93",
+    "email": "gkhanna@example.net",
+    "name": "Champak Raj",
+    "phone": "6580043973",
+    "address": {
+      "line1": "424, Dhingra Road",
+      "city": "Sagar",
+      "state": "Gujarat",
+      "postal_code": "571983",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.263192",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "96232673-1207-41bd-a59c-61f4a7a76749",
+    "email": "abdul57@example.net",
+    "name": "Balveer Dube",
+    "phone": "9094798515",
+    "address": {
+      "line1": "34/721, Ghose Street",
+      "city": "Burhanpur",
+      "state": "Arunachal Pradesh",
+      "postal_code": "484229",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.263394",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "58072377-0dbe-4359-8a7c-b3cf9c369257",
+    "email": "handra@example.net",
+    "name": "Sanaya Khosla",
+    "phone": "0561648408",
+    "address": {
+      "line1": "26/88, Chanda Marg",
+      "city": "Korba",
+      "state": "Gujarat",
+      "postal_code": "554398",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.263517",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "8c8d4240-057e-49c7-941c-9588b0d324d0",
+    "email": "vbora@example.net",
+    "name": "Arjun Sharaf",
+    "phone": "0110248193",
+    "address": {
+      "line1": "04\nNagi Ganj",
+      "city": "Jalandhar",
+      "state": "Goa",
+      "postal_code": "133613",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.263867",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "06da4244-1729-45d5-a5cf-a18573b162b4",
+    "email": "mandaraksha@example.com",
+    "name": "Azaan Som",
+    "phone": "8326842450",
+    "address": {
+      "line1": "66/506\nWarrior Zila",
+      "city": "Tadipatri",
+      "state": "Assam",
+      "postal_code": "158144",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.264509",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "6d6d6f27-4767-4b6e-9c97-6d6bb68a9ab7",
+    "email": "zayyanhari@example.org",
+    "name": "Chatura Shenoy",
+    "phone": "4141397552",
+    "address": {
+      "line1": "H.No. 099, Yogi Marg",
+      "city": "Farrukhabad",
+      "state": "Gujarat",
+      "postal_code": "368222",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.264694",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "4085ed3b-2cca-4617-895b-e6520b86e1cc",
+    "email": "rajatamalhotra@example.com",
+    "name": "Garima Srinivasan",
+    "phone": "7547812914",
+    "address": {
+      "line1": "577, Mohan Path",
+      "city": "Buxar",
+      "state": "Odisha",
+      "postal_code": "562053",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.266137",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "5cb82d89-59d9-4875-afcb-1c02f0269a30",
+    "email": "binadesai@example.com",
+    "name": "Mekhala Patla",
+    "phone": "3928272299",
+    "address": {
+      "line1": "11/080\nRavel",
+      "city": "Vadodara",
+      "state": "Nagaland",
+      "postal_code": "887256",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.266745",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "bdbef149-bc00-4b5c-918a-3edb2a551d09",
+    "email": "naikharshil@example.net",
+    "name": "Adya Ghosh",
+    "phone": "6591846386",
+    "address": {
+      "line1": "731, Pingle Road",
+      "city": "Kalyan-Dombivli",
+      "state": "Sikkim",
+      "postal_code": "856770",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.267012",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "d6ecbae5-01ce-4b82-977c-491ab5eb539a",
+    "email": "karpeoeshi@example.com",
+    "name": "Vasatika Srinivas",
+    "phone": "3926030299",
+    "address": {
+      "line1": "08/27\nKarpe Street",
+      "city": "Kottayam",
+      "state": "Rajasthan",
+      "postal_code": "322259",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.267396",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "849003bd-b18d-418c-91ae-925a849d22fe",
+    "email": "ogarde@example.com",
+    "name": "Qabil Vaidya",
+    "phone": "2579913662",
+    "address": {
+      "line1": "20/24, Varughese Street",
+      "city": "Khora ",
+      "state": "Odisha",
+      "postal_code": "413797",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.267669",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "e8912578-9d15-40d0-9840-d27cc2b47e70",
+    "email": "caleb86@example.org",
+    "name": "Lakshmi Palla",
+    "phone": "6247314986",
+    "address": {
+      "line1": "912\nBarad Chowk",
+      "city": "Tiruchirappalli",
+      "state": "Meghalaya",
+      "postal_code": "980686",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.267834",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "0fc72777-13e6-4460-b2d9-2f944383c94e",
+    "email": "npau@example.com",
+    "name": "Samar Sachdev",
+    "phone": "2588744956",
+    "address": {
+      "line1": "81/80, Jha Marg",
+      "city": "Alappuzha",
+      "state": "Kerala",
+      "postal_code": "269448",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.267975",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "df8b725a-2e8a-47e4-861b-4c9b1638b3f6",
+    "email": "lalltristan@example.com",
+    "name": "Baljiwan Rajagopalan",
+    "phone": "9849027703",
+    "address": {
+      "line1": "21/386\nBen Path",
+      "city": "Pali",
+      "state": "Rajasthan",
+      "postal_code": "127961",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.268110",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "29445adb-b72c-41a4-bea6-59160b6333ea",
+    "email": "hiyer@example.org",
+    "name": "Gautam Mane",
+    "phone": "5439376904",
+    "address": {
+      "line1": "88/39, Banik Street",
+      "city": "Mathura",
+      "state": "Rajasthan",
+      "postal_code": "214656",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.268229",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "d9a05176-2504-441b-b5bf-8ea2be465236",
+    "email": "lsharma@example.org",
+    "name": "Jackson Kuruvilla",
+    "phone": "6335658804",
+    "address": {
+      "line1": "18/45, Varghese Zila",
+      "city": "Siwan",
+      "state": "Uttarakhand",
+      "postal_code": "769735",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.268350",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "126cd361-cab3-481b-bfb7-9fdd7b240cd3",
+    "email": "veerjain@example.org",
+    "name": "Nachiket Chhabra",
+    "phone": "1790807595",
+    "address": {
+      "line1": "51/827\nPandya Path",
+      "city": "Chapra",
+      "state": "Himachal Pradesh",
+      "postal_code": "373334",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.268489",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "54c62d33-6309-4418-a742-9476e87a8755",
+    "email": "tanvidara@example.net",
+    "name": "Diya Anand",
+    "phone": "3691559428",
+    "address": {
+      "line1": "846\nDave Ganj",
+      "city": "Hajipur",
+      "state": "Uttar Pradesh",
+      "postal_code": "780856",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.268620",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "cb4ddea8-9ec7-4b3b-af79-40879d722718",
+    "email": "harishmadan@example.org",
+    "name": "Lakshmi Hayre",
+    "phone": "2702672885",
+    "address": {
+      "line1": "55/27\nKade Marg",
+      "city": "Serampore",
+      "state": "Kerala",
+      "postal_code": "472929",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.268739",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "803df3f4-9a2e-4e06-be87-4b7468672d09",
+    "email": "hemangini06@example.org",
+    "name": "Rushil Yohannan",
+    "phone": "4558771694",
+    "address": {
+      "line1": "12, Kale Nagar",
+      "city": "Fatehpur",
+      "state": "Uttarakhand",
+      "postal_code": "754558",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.268867",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "ee6735f9-c79d-476b-9df7-1443cb0a62f3",
+    "email": "sai59@example.net",
+    "name": "Odika Ganesh",
+    "phone": "0234132611",
+    "address": {
+      "line1": "99\nBora Marg",
+      "city": "Nanded",
+      "state": "Karnataka",
+      "postal_code": "554496",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.268988",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "73043d2d-1b6e-4a99-afcc-465c89a3fa04",
+    "email": "onkarbalakrishnan@example.org",
+    "name": "Eshana Soni",
+    "phone": "8487282997",
+    "address": {
+      "line1": "H.No. 681, Lala Zila",
+      "city": "Guwahati",
+      "state": "Rajasthan",
+      "postal_code": "433472",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.269118",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "ffebb8fc-ec2a-47a8-8f32-c54bed8e05b3",
+    "email": "hemanginimangat@example.com",
+    "name": "Vyanjana Sood",
+    "phone": "0649308536",
+    "address": {
+      "line1": "H.No. 78\nChakraborty Ganj",
+      "city": "Aizawl",
+      "state": "Kerala",
+      "postal_code": "424008",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.269236",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "005b4855-7dfb-41c9-a186-27e8051e723b",
+    "email": "labanmann@example.org",
+    "name": "Sneha Magar",
+    "phone": "3502080214",
+    "address": {
+      "line1": "663, Buch Road",
+      "city": "Mathura",
+      "state": "Mizoram",
+      "postal_code": "484631",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.269355",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "aad27422-8ef7-4867-81a6-91e2c42d9ffd",
+    "email": "latamanya@example.org",
+    "name": "Pratyush Handa",
+    "phone": "6013673037",
+    "address": {
+      "line1": "120, Kalla Chowk",
+      "city": "Bidar",
+      "state": "Jharkhand",
+      "postal_code": "570512",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.269477",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "7acb0035-fa95-4a6d-b1e5-d9f8af923217",
+    "email": "anair@example.org",
+    "name": "Jagdish Randhawa",
+    "phone": "0097925132",
+    "address": {
+      "line1": "45\nBasak Street",
+      "city": "Nizamabad",
+      "state": "Meghalaya",
+      "postal_code": "350313",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.269611",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "9a330d14-1575-49bb-8180-e90190b98b08",
+    "email": "balveer77@example.net",
+    "name": "Vrishti Gupta",
+    "phone": "8557498218",
+    "address": {
+      "line1": "00/528\nDass Zila",
+      "city": "Muzaffarpur",
+      "state": "Karnataka",
+      "postal_code": "730652",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.269729",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "39000cd4-9ecc-49c6-9cb5-5ddf06ccfcb6",
+    "email": "widishadube@example.net",
+    "name": "Ekantika Rout",
+    "phone": "1181022031",
+    "address": {
+      "line1": "57/08\nGoyal Marg",
+      "city": "Udupi",
+      "state": "West Bengal",
+      "postal_code": "935186",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.269854",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "f745bce1-2611-493e-83c5-4a6f7fdf1a91",
+    "email": "ojasvi50@example.net",
+    "name": "Banjeet Bobal",
+    "phone": "1381138633",
+    "address": {
+      "line1": "67/89, Kunda",
+      "city": "Ambarnath",
+      "state": "Haryana",
+      "postal_code": "037170",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.269977",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "8073998e-ce56-47e6-a2d5-a2744e613c38",
+    "email": "upandey@example.net",
+    "name": "Kamya Sachar",
+    "phone": "5939836845",
+    "address": {
+      "line1": "86/19, Shanker Path",
+      "city": "Vasai-Virar",
+      "state": "Goa",
+      "postal_code": "868528",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.270138",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "1bbc6121-5075-4dee-bef8-372dcbc2f5ec",
+    "email": "girindrabarad@example.com",
+    "name": "Nachiket Devi",
+    "phone": "5933441969",
+    "address": {
+      "line1": "04/908, Mittal Street",
+      "city": "Dewas",
+      "state": "Haryana",
+      "postal_code": "504888",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.270566",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "60accfd6-3dfb-4f64-a6fc-9683aca0d5c0",
+    "email": "advayraja@example.org",
+    "name": "Benjamin Nagar",
+    "phone": "5832067998",
+    "address": {
+      "line1": "791\nMital",
+      "city": "Gangtok",
+      "state": "Madhya Pradesh",
+      "postal_code": "055661",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.270988",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "9274d591-c903-4a71-9726-ee8fed85ac79",
+    "email": "wde@example.org",
+    "name": "Rudra Sura",
+    "phone": "9389833146",
+    "address": {
+      "line1": "22\nButala Path",
+      "city": "Aurangabad",
+      "state": "Telangana",
+      "postal_code": "864168",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.271161",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "76e70dcc-0e09-4b43-b744-b988ba984dab",
+    "email": "ryanprakash@example.org",
+    "name": "Isaiah Bhagat",
+    "phone": "9240514770",
+    "address": {
+      "line1": "66/553, Padmanabhan Path",
+      "city": "Farrukhabad",
+      "state": "Goa",
+      "postal_code": "979270",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.271955",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "eb3aa0c5-28b7-4751-b62c-b4d041ce64d5",
+    "email": "chatresh70@example.org",
+    "name": "Anika Parsa",
+    "phone": "0463681579",
+    "address": {
+      "line1": "884, Subramanian Circle",
+      "city": "Surat",
+      "state": "Madhya Pradesh",
+      "postal_code": "420439",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.272863",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "5210173c-26d0-411f-9f3f-67e5ae029cd2",
+    "email": "yachanamajumdar@example.org",
+    "name": "Lila Balan",
+    "phone": "3256216893",
+    "address": {
+      "line1": "78/00, Wagle Ganj",
+      "city": "Thoothukudi",
+      "state": "Meghalaya",
+      "postal_code": "205554",
+      "country": "IN"
+    },
+    "role": "delivery_guy",
+    "created_at": "2025-10-21T23:19:17.273042",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "5200d98e-70ea-4892-908d-e5bd642f8366",
+    "email": "qushidhillon@example.net",
+    "name": "Eesha Bir",
+    "phone": "2520566474",
+    "address": {
+      "line1": "49, Sen Path",
+      "city": "Tiruppur",
+      "state": "Rajasthan",
+      "postal_code": "983248",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.273695",
+    "last_login": null,
+    "is_active": true
+  },
+  {
+    "customer_id": "4b1ba5eb-8f53-4a76-8eec-180ebf8d8a9c",
+    "email": "lprakash@example.com",
+    "name": "Urvi Devan",
+    "phone": "3306046333",
+    "address": {
+      "line1": "099, Kashyap Road",
+      "city": "Ahmednagar",
+      "state": "Sikkim",
+      "postal_code": "517289",
+      "country": "IN"
+    },
+    "role": "customer",
+    "created_at": "2025-10-21T23:19:17.273945",
+    "last_login": null,
+    "is_active": true
+  }
+]

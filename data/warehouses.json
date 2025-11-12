@@ -1,0 +1,37 @@
+[
+  {
+    "warehouse_id": "96eb91c7-35c3-4fb0-b4e8-ea3b333dd138",
+    "name": "Delhi Hub",
+    "lat": 28.512349,
+    "lon": 77.002851,
+    "region": "Delhi"
+  },
+  {
+    "warehouse_id": "6e80fcc9-3072-40ac-ba75-98e3f8296574",
+    "name": "Mumbai Central",
+    "lat": 19.09422,
+    "lon": 72.701798,
+    "region": "Mumbai"
+  },
+  {
+    "warehouse_id": "3a01e782-5bf7-47ef-9f7d-05ba20da8df2",
+    "name": "Bangalore North",
+    "lat": 12.891577,
+    "lon": 77.721626,
+    "region": "Bangalore"
+  },
+  {
+    "warehouse_id": "41e27dc5-f3f4-4ac3-b561-92ae5f164072",
+    "name": "Chennai South",
+    "lat": 12.921257,
+    "lon": 80.159501,
+    "region": "Chennai"
+  },
+  {
+    "warehouse_id": "d6d3dccf-f279-4c45-aad4-d3eb2b49e9ec",
+    "name": "Ahmedabad South",
+    "lat": 22.964271,
+    "lon": 72.452925,
+    "region": "Ahmedabad"
+  }
+]

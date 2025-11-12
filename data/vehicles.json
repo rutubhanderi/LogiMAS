@@ -1,0 +1,242 @@
+[
+  {
+    "vehicle_id": "32c1db3c-e915-46c5-ad39-f203570515a8",
+    "vehicle_type": "Truck",
+    "capacity_kg": 3933.87,
+    "capacity_volume_cm3": 4047110.14,
+    "fuel_type": "Petrol",
+    "status": "active"
+  },
+  {
+    "vehicle_id": "b1337d76-a003-41a1-8e43-831264c5d165",
+    "vehicle_type": "Truck",
+    "capacity_kg": 3311.96,
+    "capacity_volume_cm3": 1803772.95,
+    "fuel_type": "EV",
+    "status": "maintenance"
+  },
+  {
+    "vehicle_id": "e1486805-752a-4f47-8788-cd5c335a5f20",
+    "vehicle_type": "Bike",
+    "capacity_kg": 318.15,
+    "capacity_volume_cm3": 3284604.67,
+    "fuel_type": "Diesel",
+    "status": "active"
+  },
+  {
+    "vehicle_id": "458bcbed-9feb-429f-9f56-e60825153eb8",
+    "vehicle_type": "Van",
+    "capacity_kg": 3654.66,
+    "capacity_volume_cm3": 4012932.93,
+    "fuel_type": "Diesel",
+    "status": "active"
+  },
+  {
+    "vehicle_id": "8c1713c2-2cb5-4fb4-9dc4-c88361512838",
+    "vehicle_type": "Truck",
+    "capacity_kg": 991.53,
+    "capacity_volume_cm3": 2270637.06,
+    "fuel_type": "EV",
+    "status": "active"
+  },
+  {
+    "vehicle_id": "2d9d85e6-865c-4a58-9698-39d1dd91f7db",
+    "vehicle_type": "Van",
+    "capacity_kg": 2340.01,
+    "capacity_volume_cm3": 4378705.47,
+    "fuel_type": "Diesel",
+    "status": "maintenance"
+  },
+  {
+    "vehicle_id": "2889f188-ecc9-4c0a-b492-ae4169a47672",
+    "vehicle_type": "Bike",
+    "capacity_kg": 534.65,
+    "capacity_volume_cm3": 3278117.23,
+    "fuel_type": "Diesel",
+    "status": "active"
+  },
+  {
+    "vehicle_id": "f6ddc4cb-4800-4bbe-bcd2-6f6ff2b54e42",
+    "vehicle_type": "Truck",
+    "capacity_kg": 873.24,
+    "capacity_volume_cm3": 2453923.57,
+    "fuel_type": "Petrol",
+    "status": "maintenance"
+  },
+  {
+    "vehicle_id": "0c1f934b-d98f-480f-beee-13054c677307",
+    "vehicle_type": "Truck",
+    "capacity_kg": 864.95,
+    "capacity_volume_cm3": 60669.12,
+    "fuel_type": "EV",
+    "status": "maintenance"
+  },
+  {
+    "vehicle_id": "77b97fa5-cf26-48ab-a396-10af6a89ef55",
+    "vehicle_type": "Van",
+    "capacity_kg": 1461.98,
+    "capacity_volume_cm3": 3498127.94,
+    "fuel_type": "EV",
+    "status": "active"
+  },
+  {
+    "vehicle_id": "03de0840-8cb0-4c67-9cfe-1275462386e2",
+    "vehicle_type": "Truck",
+    "capacity_kg": 1518.7,
+    "capacity_volume_cm3": 4845111.36,
+    "fuel_type": "Diesel",
+    "status": "inactive"
+  },
+  {
+    "vehicle_id": "8a5aea73-5942-42c7-aea0-4e332ef2acd2",
+    "vehicle_type": "Van",
+    "capacity_kg": 332.97,
+    "capacity_volume_cm3": 2941679.09,
+    "fuel_type": "Petrol",
+    "status": "active"
+  },
+  {
+    "vehicle_id": "35b554a7-a063-497f-95f7-52dad3721d01",
+    "vehicle_type": "Bike",
+    "capacity_kg": 446.55,
+    "capacity_volume_cm3": 969833.56,
+    "fuel_type": "Diesel",
+    "status": "inactive"
+  },
+  {
+    "vehicle_id": "b00c1837-d483-4084-bfeb-683f9f1e68e1",
+    "vehicle_type": "Truck",
+    "capacity_kg": 2048.69,
+    "capacity_volume_cm3": 4710900.83,
+    "fuel_type": "Petrol",
+    "status": "inactive"
+  },
+  {
+    "vehicle_id": "d048d867-8d06-45d7-b69c-db43b3d22779",
+    "vehicle_type": "Bike",
+    "capacity_kg": 246.72,
+    "capacity_volume_cm3": 455817.86,
+    "fuel_type": "CNG",
+    "status": "maintenance"
+  },
+  {
+    "vehicle_id": "0587ccc8-6160-4c7c-8b42-d4807700db8b",
+    "vehicle_type": "Truck",
+    "capacity_kg": 3365.14,
+    "capacity_volume_cm3": 1605210.12,
+    "fuel_type": "CNG",
+    "status": "maintenance"
+  },
+  {
+    "vehicle_id": "05058839-65bf-45f2-90e8-96377b49eeb9",
+    "vehicle_type": "Truck",
+    "capacity_kg": 3374.87,
+    "capacity_volume_cm3": 1534985.55,
+    "fuel_type": "CNG",
+    "status": "active"
+  },
+  {
+    "vehicle_id": "bc8519a5-03fc-490a-89c7-f6f1f158f213",
+    "vehicle_type": "Truck",
+    "capacity_kg": 2318.51,
+    "capacity_volume_cm3": 4992349.48,
+    "fuel_type": "Diesel",
+    "status": "active"
+  },
+  {
+    "vehicle_id": "b6615dc4-0e90-4aa9-941e-b2ffc26aaba1",
+    "vehicle_type": "Bike",
+    "capacity_kg": 1105.11,
+    "capacity_volume_cm3": 1362742.05,
+    "fuel_type": "CNG",
+    "status": "active"
+  },
+  {
+    "vehicle_id": "a3cf3a25-c4bb-4bf4-a7ed-5b41269e8cca",
+    "vehicle_type": "Truck",
+    "capacity_kg": 1879.16,
+    "capacity_volume_cm3": 830846.82,
+    "fuel_type": "CNG",
+    "status": "inactive"
+  },
+  {
+    "vehicle_id": "ed4b5525-eda6-4fa5-a65b-ca71b0f6194f",
+    "vehicle_type": "Bike",
+    "capacity_kg": 2668.26,
+    "capacity_volume_cm3": 3355922.86,
+    "fuel_type": "CNG",
+    "status": "inactive"
+  },
+  {
+    "vehicle_id": "9ce2a312-2e55-4987-9b58-9c8095d79e64",
+    "vehicle_type": "Truck",
+    "capacity_kg": 4697.7,
+    "capacity_volume_cm3": 714741.02,
+    "fuel_type": "Diesel",
+    "status": "active"
+  },
+  {
+    "vehicle_id": "9ae588fc-cec9-42fb-a522-7a08007a8e0c",
+    "vehicle_type": "Bike",
+    "capacity_kg": 2788.46,
+    "capacity_volume_cm3": 1398123.65,
+    "fuel_type": "Petrol",
+    "status": "inactive"
+  },
+  {
+    "vehicle_id": "16fee7e8-e6bf-4038-a2ac-e15035ec5991",
+    "vehicle_type": "Van",
+    "capacity_kg": 1057.81,
+    "capacity_volume_cm3": 3189477.9,
+    "fuel_type": "CNG",
+    "status": "inactive"
+  },
+  {
+    "vehicle_id": "9cad690c-7287-463e-843c-2b0b364f22b4",
+    "vehicle_type": "Van",
+    "capacity_kg": 1293.05,
+    "capacity_volume_cm3": 4545387.28,
+    "fuel_type": "Diesel",
+    "status": "active"
+  },
+  {
+    "vehicle_id": "1aebc0f8-84ea-458f-86b5-97ab94f9e15e",
+    "vehicle_type": "Bike",
+    "capacity_kg": 2146.7,
+    "capacity_volume_cm3": 1419567.11,
+    "fuel_type": "Diesel",
+    "status": "maintenance"
+  },
+  {
+    "vehicle_id": "fe14591b-7981-4b06-9af9-5ce49e0062d8",
+    "vehicle_type": "Truck",
+    "capacity_kg": 3203.71,
+    "capacity_volume_cm3": 1346678.55,
+    "fuel_type": "EV",
+    "status": "inactive"
+  },
+  {
+    "vehicle_id": "e8598792-4dd6-430b-9c94-5f235b116d30",
+    "vehicle_type": "Bike",
+    "capacity_kg": 2167.05,
+    "capacity_volume_cm3": 97865.01,
+    "fuel_type": "Diesel",
+    "status": "inactive"
+  },
+  {
+    "vehicle_id": "ceede274-42a0-4f6c-9441-bdbdfdcb23ea",
+    "vehicle_type": "Truck",
+    "capacity_kg": 2750.67,
+    "capacity_volume_cm3": 4181245.35,
+    "fuel_type": "Petrol",
+    "status": "maintenance"
+  },
+  {
+    "vehicle_id": "c7e5c192-2946-47f7-af3b-da92f7083b4d",
+    "vehicle_type": "Truck",
+    "capacity_kg": 257.05,
+    "capacity_volume_cm3": 1855025.0,
+    "fuel_type": "Diesel",
+    "status": "maintenance"
+  }
+]
